@@ -1,0 +1,2564 @@
+[
+    {
+        "LATITUD": -12.011925,
+        "LONGITUD": -77.009748,
+        "nombre_vecino": "CRISTIAN MERA HERNANDEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.008243,
+        "LONGITUD": -77.005365,
+        "nombre_vecino": "LOURDES CHIRINOS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.010935,
+        "LONGITUD": -77.004215,
+        "nombre_vecino": "VICENTE BERROSQUI-PARQUE LOS JARDINES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.011717,
+        "LONGITUD": -77.004378,
+        "nombre_vecino": "VICENTE BERROSQUI-PARQUE LOS JARDINES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.011239,
+        "LONGITUD": -77.010773,
+        "nombre_vecino": "RENZO VALDEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.012308,
+        "LONGITUD": -77.010541,
+        "nombre_vecino": "RENZO VALDEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.019325,
+        "LONGITUD": -77.013446,
+        "nombre_vecino": "JOSE velasquez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.018145,
+        "LONGITUD": -77.011145,
+        "nombre_vecino": "Ricardo Naia",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.010414,
+        "LONGITUD": -77.008547,
+        "nombre_vecino": "CELEDONIO PUSCUIO LAYPE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.024636,
+        "LONGITUD": -77.009715,
+        "nombre_vecino": "MANUEL MORAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 8
+    },
+    {
+        "LATITUD": -12.018284,
+        "LONGITUD": -77.010708,
+        "nombre_vecino": "GUSTAVO DIAZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 7
+    },
+    {
+        "LATITUD": -12.008232,
+        "LONGITUD": -77.005352,
+        "nombre_vecino": "LOURDES CHIRINOS ORIHUELA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.02565,
+        "LONGITUD": -77.016454,
+        "nombre_vecino": "Gloria granados",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 8
+    },
+    {
+        "LATITUD": -12.024783,
+        "LONGITUD": -77.011476,
+        "nombre_vecino": "LUIS ENRIQUE PEREZ HURTADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.02522,
+        "LONGITUD": -77.011434,
+        "nombre_vecino": "ANALUPE CAJA DE AGUA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 8
+    },
+    {
+        "LATITUD": -12.019381,
+        "LONGITUD": -77.010954,
+        "nombre_vecino": "OSCAR ROJAS CAMACHO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025871,
+        "LONGITUD": -77.015172,
+        "nombre_vecino": "YSIDO GONZALES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015886,
+        "LONGITUD": -77.004919,
+        "nombre_vecino": "DANIEL FERNANDEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.02667,
+        "LONGITUD": -77.018985,
+        "nombre_vecino": "JESUS ARROYO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -12.003184,
+        "LONGITUD": -77.008065,
+        "nombre_vecino": "INVERSIONES KIMER",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.992286,
+        "LONGITUD": -77.001499,
+        "nombre_vecino": "JEREMY GUTIERREZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.004113,
+        "LONGITUD": -77.009934,
+        "nombre_vecino": "LEE CASTRO SILVA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.002225,
+        "LONGITUD": -77.001362,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002178,
+        "LONGITUD": -77.001954,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002298,
+        "LONGITUD": -77.001918,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002087,
+        "LONGITUD": -77.002303,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.001973,
+        "LONGITUD": -77.001924,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002182,
+        "LONGITUD": -77.001796,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002272,
+        "LONGITUD": -77.002058,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002526,
+        "LONGITUD": -77.001998,
+        "nombre_vecino": "RUISE\u00d1OR  PARQUE LOS FICUS  4 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.989672,
+        "LONGITUD": -77.007574,
+        "nombre_vecino": "CESAR MANUEL TORRES FEBRE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.989672,
+        "LONGITUD": -77.007574,
+        "nombre_vecino": "Cesar Manuel Torres febre",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.999283,
+        "LONGITUD": -77.014013,
+        "nombre_vecino": "Marco Vasquez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.000958,
+        "LONGITUD": -77.010029,
+        "nombre_vecino": "Richard Colmex Santiago Rojas",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.99894,
+        "LONGITUD": -76.9985,
+        "nombre_vecino": "NATALY ROCIO GARCIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.004044,
+        "LONGITUD": -77.008795,
+        "nombre_vecino": "JESUS DAMIAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.004038,
+        "LONGITUD": -77.008799,
+        "nombre_vecino": "JESUS DAMIAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.009447,
+        "LONGITUD": -76.996639,
+        "nombre_vecino": "JUAN ESPINOZA GARAVITO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.996778,
+        "LONGITUD": -76.999322,
+        "nombre_vecino": "LUIS ALBERTO RONDOM",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.99854,
+        "LONGITUD": -76.999986,
+        "nombre_vecino": "FRED QUIROZ GUTIERREZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.998998,
+        "LONGITUD": -76.998525,
+        "nombre_vecino": "LUIS HONORIO VARGAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.010892,
+        "LONGITUD": -76.998651,
+        "nombre_vecino": "ERICK DAVID TORRES VENEGAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.995445,
+        "LONGITUD": -77.00066,
+        "nombre_vecino": "FORTUNATO GUTIERREZ MEDINA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.985206,
+        "LONGITUD": -77.005432,
+        "nombre_vecino": "SEGUNDO TORRES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.996296,
+        "LONGITUD": -77.00235,
+        "nombre_vecino": "YANDERI CARLOS LIMACHE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.005455,
+        "LONGITUD": -77.014844,
+        "nombre_vecino": "Renzo segarra legua",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.999274,
+        "LONGITUD": -77.013946,
+        "nombre_vecino": "Rosario sucuitanato torres",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.005697,
+        "LONGITUD": -77.009918,
+        "nombre_vecino": "Carlos bautista pantoja",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.001993,
+        "LONGITUD": -76.999553,
+        "nombre_vecino": "Clinica SAN MARCOS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 11
+    },
+    {
+        "LATITUD": -11.989525,
+        "LONGITUD": -77.007853,
+        "nombre_vecino": "CESAR TORRES FEBRE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.999274,
+        "LONGITUD": -77.013946,
+        "nombre_vecino": "Rosario sucuitanato torres",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.005455,
+        "LONGITUD": -77.014844,
+        "nombre_vecino": "Renzo segarra legua",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.005697,
+        "LONGITUD": -77.009918,
+        "nombre_vecino": "Carlos bautista pantoja",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.005697,
+        "LONGITUD": -77.009918,
+        "nombre_vecino": "Clinica SAN MARCOS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 11
+    },
+    {
+        "LATITUD": -12.004427,
+        "LONGITUD": -77.002098,
+        "nombre_vecino": "RICHARD COLMEX SANTIAGO ROJAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.990461,
+        "LONGITUD": -77.004358,
+        "nombre_vecino": "Lucy de la cruz",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.004427,
+        "LONGITUD": -77.011735,
+        "nombre_vecino": "RICHARD SANTIAGO ROJAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.99961,
+        "LONGITUD": -77.00153,
+        "nombre_vecino": "ANGEL ROJAS CORDERO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 8
+    },
+    {
+        "LATITUD": -12.000809,
+        "LONGITUD": -76.999092,
+        "nombre_vecino": "MARINO ANGELES PONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 7
+    },
+    {
+        "LATITUD": -12.001094,
+        "LONGITUD": -77.001526,
+        "nombre_vecino": "SANTIAGO ORTIZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.009004,
+        "LONGITUD": -76.997971,
+        "nombre_vecino": "Francis R\u00edos acosta",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.010295,
+        "LONGITUD": -76.997246,
+        "nombre_vecino": "JOSE MARIO DIAZ CACHAY",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.009098,
+        "LONGITUD": -76.998437,
+        "nombre_vecino": "Juan Daniel Ch\u00e1vez medina",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.002346,
+        "LONGITUD": -76.995113,
+        "nombre_vecino": "Luis Alberto Ferrer gomez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.002801,
+        "LONGITUD": -76.993799,
+        "nombre_vecino": "Mary quevedo",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.002801,
+        "LONGITUD": -76.993799,
+        "nombre_vecino": "Mary quevedo",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.998302,
+        "LONGITUD": -76.996795,
+        "nombre_vecino": "Kevin gonzales",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.003602,
+        "LONGITUD": -77.003875,
+        "nombre_vecino": "CRISTIAN LAUREN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.000487,
+        "LONGITUD": -77.004386,
+        "nombre_vecino": "Victor Santiago Vega martino",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.998809,
+        "LONGITUD": -77.000337,
+        "nombre_vecino": "Ren\u00e9 luna escalante",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.006162,
+        "LONGITUD": -77.006597,
+        "nombre_vecino": "DAVID",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.003657,
+        "LONGITUD": -77.016808,
+        "nombre_vecino": "MABILO ZELAYA ORTIZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.009476,
+        "LONGITUD": -77.016681,
+        "nombre_vecino": "DAVID DELGADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.004174,
+        "LONGITUD": -77.00319,
+        "nombre_vecino": "LUIS ANGEL COLINA HUAMAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -12.004291,
+        "LONGITUD": -77.0035,
+        "nombre_vecino": "LUIS ANGEL COLINA HUAMAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.003802,
+        "LONGITUD": -77.00325,
+        "nombre_vecino": "LENNIN VERA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.002124,
+        "LONGITUD": -77.00367,
+        "nombre_vecino": "VECINO JUDITH ESPINOZA SUAREZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.002637,
+        "LONGITUD": -76.999764,
+        "nombre_vecino": "VECINO CLEIBER HERNANDEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.000312,
+        "LONGITUD": -77.012213,
+        "nombre_vecino": "LEYDI CORNEJO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 10
+    },
+    {
+        "LATITUD": -11.989662,
+        "LONGITUD": -77.0076,
+        "nombre_vecino": "CESAR TORRES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.000614,
+        "LONGITUD": -77.004679,
+        "nombre_vecino": "REBECA LILIBETH NEYRA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.997496,
+        "LONGITUD": -77.005025,
+        "nombre_vecino": "FRANKLIN HUAYTALLA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.002972,
+        "LONGITUD": -76.993899,
+        "nombre_vecino": "VICTOR SOTERO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.005859,
+        "LONGITUD": -77.007069,
+        "nombre_vecino": "JUAN ROMAN LOPEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.004681,
+        "LONGITUD": -76.990336,
+        "nombre_vecino": "ALBERTO RAVELO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 9
+    },
+    {
+        "LATITUD": -11.990297,
+        "LONGITUD": -77.01018,
+        "nombre_vecino": "JACKELINE DE LA CRUZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.974519,
+        "LONGITUD": -77.006541,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974574,
+        "LONGITUD": -77.006578,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973495,
+        "LONGITUD": -77.00427,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.97346,
+        "LONGITUD": -77.004222,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973799,
+        "LONGITUD": -77.006462,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973833,
+        "LONGITUD": -77.006409,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973462,
+        "LONGITUD": -77.007175,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973252,
+        "LONGITUD": -77.007105,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973678,
+        "LONGITUD": -77.006853,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.97374,
+        "LONGITUD": -77.006306,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973245,
+        "LONGITUD": -77.007378,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.9732,
+        "LONGITUD": -77.007339,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.972378,
+        "LONGITUD": -77.005792,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.972039,
+        "LONGITUD": -77.006464,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.972833,
+        "LONGITUD": -77.006831,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.972811,
+        "LONGITUD": -77.006872,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.971361,
+        "LONGITUD": -77.005786,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.971297,
+        "LONGITUD": -77.005742,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973242,
+        "LONGITUD": -77.005506,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973164,
+        "LONGITUD": -77.005431,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973169,
+        "LONGITUD": -77.005425,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973246,
+        "LONGITUD": -77.005506,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974967,
+        "LONGITUD": -77.005731,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974999,
+        "LONGITUD": -77.005662,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974588,
+        "LONGITUD": -77.006423,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974301,
+        "LONGITUD": -77.003541,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974266,
+        "LONGITUD": -77.003492,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.972897,
+        "LONGITUD": -77.005092,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.975297,
+        "LONGITUD": -77.006497,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.975914,
+        "LONGITUD": -77.006921,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.975972,
+        "LONGITUD": -77.006847,
+        "nombre_vecino": "VECINOPLAY PARK",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.976933,
+        "LONGITUD": -77.018035,
+        "nombre_vecino": "AGUSTIN ACEVEDO \u00d1A\u00d1EZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.976697,
+        "LONGITUD": -77.022678,
+        "nombre_vecino": "KIMBERLY PILLACA ALARC\u00d3N",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.976697,
+        "LONGITUD": -77.022678,
+        "nombre_vecino": "Kimberly Pillaca Alarc\u00f3n",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.984807,
+        "LONGITUD": -77.007645,
+        "nombre_vecino": "Tatiana",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.98837,
+        "LONGITUD": -77.013022,
+        "nombre_vecino": "PATRICIA ATAPOMA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.98819,
+        "LONGITUD": -77.0144,
+        "nombre_vecino": "JOSE RETIS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.982142,
+        "LONGITUD": -77.013375,
+        "nombre_vecino": "WILLY TUCTO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.982142,
+        "LONGITUD": -77.013375,
+        "nombre_vecino": "WILLY TUCTO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.981642,
+        "LONGITUD": -77.017269,
+        "nombre_vecino": "Deivis Ortega Bendezu",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.98912,
+        "LONGITUD": -77.016698,
+        "nombre_vecino": "Moises nolasco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.97836,
+        "LONGITUD": -77.010735,
+        "nombre_vecino": "charles malle",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 6
+    },
+    {
+        "LATITUD": -11.98016,
+        "LONGITUD": -77.01193,
+        "nombre_vecino": "KARINA CEPEDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.985094,
+        "LONGITUD": -77.012329,
+        "nombre_vecino": "MARIBEL ZAMORA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.985094,
+        "LONGITUD": -77.012329,
+        "nombre_vecino": "Maribel zamora",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.97618,
+        "LONGITUD": -77.00977,
+        "nombre_vecino": "DANI PARIONA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.96891,
+        "LONGITUD": -77.00609,
+        "nombre_vecino": "Alexis Dami\u00e1n",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.972864,
+        "LONGITUD": -77.00065,
+        "nombre_vecino": "RONALD. OLORTEGUI",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.964504,
+        "LONGITUD": -77.001753,
+        "nombre_vecino": "JHON VASQUEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.986053,
+        "LONGITUD": -77.013538,
+        "nombre_vecino": "Libia roldan campomanes",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.988302,
+        "LONGITUD": -77.015295,
+        "nombre_vecino": "Rosario Benitez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.996119,
+        "LONGITUD": -77.015963,
+        "nombre_vecino": "LUIS JACOME CABELLO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.9761,
+        "LONGITUD": -77.004082,
+        "nombre_vecino": "RONALD. OLORTEGUI",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.966995,
+        "LONGITUD": -77.001447,
+        "nombre_vecino": "PAUL DELGADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.974763,
+        "LONGITUD": -77.006513,
+        "nombre_vecino": "MANUEL BAILON",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 6
+    },
+    {
+        "LATITUD": -11.974763,
+        "LONGITUD": -77.006513,
+        "nombre_vecino": "ROMARIO BALBOA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 8
+    },
+    {
+        "LATITUD": -11.972136,
+        "LONGITUD": -77.002191,
+        "nombre_vecino": "JUAN DE LA CRUZ GONAZALES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.976162,
+        "LONGITUD": -77.003595,
+        "nombre_vecino": "JUNIOR ESPEDILLA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 16
+    },
+    {
+        "LATITUD": -11.9765,
+        "LONGITUD": -77.019367,
+        "nombre_vecino": "WALTER CUYA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 7
+    },
+    {
+        "LATITUD": -11.976358,
+        "LONGITUD": -77.019856,
+        "nombre_vecino": "VECINO ESTALIN CARGUACHUCO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.974133,
+        "LONGITUD": -77.002465,
+        "nombre_vecino": "SEGUNDO TORRES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.964577,
+        "LONGITUD": -76.990561,
+        "nombre_vecino": "CLINICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.964643,
+        "LONGITUD": -76.99062,
+        "nombre_vecino": "CLINICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.964597,
+        "LONGITUD": -76.990576,
+        "nombre_vecino": "CLINICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.964622,
+        "LONGITUD": -76.990598,
+        "nombre_vecino": "CLINICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.968407,
+        "LONGITUD": -76.981568,
+        "nombre_vecino": "LA FRAGATA  22 CAMARAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 17
+    },
+    {
+        "LATITUD": -11.965015,
+        "LONGITUD": -76.990893,
+        "nombre_vecino": "MANUEL MALDONADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.963753,
+        "LONGITUD": -76.990659,
+        "nombre_vecino": "MANUEL MALDONADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.96817,
+        "LONGITUD": -76.985321,
+        "nombre_vecino": "MERCADO SANTA ROSA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.979856,
+        "LONGITUD": -77.00398,
+        "nombre_vecino": "MILTON BACA SALGADA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.966826,
+        "LONGITUD": -76.975356,
+        "nombre_vecino": "POSTA MEDICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.966969,
+        "LONGITUD": -76.975053,
+        "nombre_vecino": "POSTA MEDICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.966975,
+        "LONGITUD": -76.975391,
+        "nombre_vecino": "POSTA MEDICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.96684,
+        "LONGITUD": -76.97533,
+        "nombre_vecino": "POSTA MEDICA SANTA MARIA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.981427,
+        "LONGITUD": -77.005374,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.981508,
+        "LONGITUD": -77.0054,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.981416,
+        "LONGITUD": -77.005172,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.981425,
+        "LONGITUD": -77.005144,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973181,
+        "LONGITUD": -76.997314,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.973239,
+        "LONGITUD": -76.997419,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.959647,
+        "LONGITUD": -76.987078,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.959704,
+        "LONGITUD": -76.987115,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.975654,
+        "LONGITUD": -77.000891,
+        "nombre_vecino": "ROSA GONZALES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.983262,
+        "LONGITUD": -76.998083,
+        "nombre_vecino": "ANTONIO TAPIA SANTANA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 13
+    },
+    {
+        "LATITUD": -11.969326,
+        "LONGITUD": -76.98835,
+        "nombre_vecino": "EDGAR BERNARDO JUSTINIANO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.988052,
+        "LONGITUD": -76.996122,
+        "nombre_vecino": "JORGE HERNAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.952729,
+        "LONGITUD": -76.987514,
+        "nombre_vecino": "MANUEL MALDONADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.952801,
+        "LONGITUD": -76.987481,
+        "nombre_vecino": "MANUEL MALDONADO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.960092,
+        "LONGITUD": -76.989665,
+        "nombre_vecino": "GRACIELA MENDOZA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.951447,
+        "LONGITUD": -76.988388,
+        "nombre_vecino": "JOSE IZQUIERDO OLANO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.95991,
+        "LONGITUD": -76.98985,
+        "nombre_vecino": "NANCY MAMANI",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.954683,
+        "LONGITUD": -76.989197,
+        "nombre_vecino": "FELICIANA BELLIDO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.95497,
+        "LONGITUD": -76.992214,
+        "nombre_vecino": "ELIZABETH ALEJOS LACHIRA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.95569,
+        "LONGITUD": -76.97689,
+        "nombre_vecino": "A.H TUPAC AMARU",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 19
+    },
+    {
+        "LATITUD": -11.96169,
+        "LONGITUD": -76.9822,
+        "nombre_vecino": "FERRETERIA TRANSERVICE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.96167,
+        "LONGITUD": -76.98217,
+        "nombre_vecino": "FERRETERIA TRANSERVICE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.96167,
+        "LONGITUD": -76.98223,
+        "nombre_vecino": "FERRETERIA TRANSERVICE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.95106,
+        "LONGITUD": -76.98006,
+        "nombre_vecino": "EDUARDO TELLO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.93481,
+        "LONGITUD": -76.97138,
+        "nombre_vecino": "JAVIER CUZCO FAICHIN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.027564,
+        "LONGITUD": -77.005103,
+        "nombre_vecino": "CARMEN NEURA  QUENAS 285",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025579,
+        "LONGITUD": -77.006329,
+        "nombre_vecino": "EDER REYES  PARQUE AYAR MANCO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025582,
+        "LONGITUD": -77.00636,
+        "nombre_vecino": "EDER REYES  PARQUE AYAR MANCO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.010892,
+        "LONGITUD": -76.984276,
+        "nombre_vecino": "JOSE CARLOS PALOMINO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.025312,
+        "LONGITUD": -77.007464,
+        "nombre_vecino": "JULIO MARINO  LOS CHASQUIS 513",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025339,
+        "LONGITUD": -77.007434,
+        "nombre_vecino": "JULIO MARINO  LOS CHASQUIS 514",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.016449,
+        "LONGITUD": -76.983133,
+        "nombre_vecino": "MARCELO MARTEL  AV. EL SANTUARIO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.012178,
+        "LONGITUD": -76.985218,
+        "nombre_vecino": "MARIA RIVERA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.026881,
+        "LONGITUD": -77.005668,
+        "nombre_vecino": "MIRELLA BRUGMAN AYAR MANCO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.026853,
+        "LONGITUD": -77.005685,
+        "nombre_vecino": "MIRELLA BRUGMAN AYAR MANCO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.01484,
+        "LONGITUD": -76.995588,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.014841,
+        "LONGITUD": -76.995556,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.014902,
+        "LONGITUD": -76.995526,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.014946,
+        "LONGITUD": -76.995527,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015101,
+        "LONGITUD": -76.995553,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015594,
+        "LONGITUD": -76.99663,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015625,
+        "LONGITUD": -76.996632,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015567,
+        "LONGITUD": -76.996627,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015066,
+        "LONGITUD": -76.996124,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015118,
+        "LONGITUD": -76.99612,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.016213,
+        "LONGITUD": -76.995517,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015561,
+        "LONGITUD": -76.995498,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.016153,
+        "LONGITUD": -76.996145,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015681,
+        "LONGITUD": -76.996126,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015628,
+        "LONGITUD": -76.996127,
+        "nombre_vecino": "ROSA VEGA  PARQUE 2 HORIZONTE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025551,
+        "LONGITUD": -76.992781,
+        "nombre_vecino": "LIZARDO VISITACION-PARQUE ANTUNEZ DE MAYOLO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.024879,
+        "LONGITUD": -76.99192,
+        "nombre_vecino": "LIZARDO VISITACION-PARQUE ANTUNEZ DE MAYOLO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.026032,
+        "LONGITUD": -76.992176,
+        "nombre_vecino": "LIZARDO VISITACION-PARQUE ANTUNEZ DE MAYOLO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.02491,
+        "LONGITUD": -76.990833,
+        "nombre_vecino": "VECINOCARLOS LARA-PARQUE CHAVIN DE HUANTAR",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025467,
+        "LONGITUD": -76.990819,
+        "nombre_vecino": "VECINOCARLOS LARA-PARQUE CHAVIN DE HUANTAR",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.02539,
+        "LONGITUD": -76.98931,
+        "nombre_vecino": "VECINOCARLOS LARA-PARQUE CHAVIN DE HUANTAR",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.024807,
+        "LONGITUD": -76.989851,
+        "nombre_vecino": "VECINOCARLOS LARA-PARQUE CHAVIN DE HUANTAR",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025461,
+        "LONGITUD": -76.989985,
+        "nombre_vecino": "VECINOCARLOS LARA-PARQUE CHAVIN DE HUANTAR",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025505,
+        "LONGITUD": -77.000603,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025511,
+        "LONGITUD": -77.00065,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025899,
+        "LONGITUD": -77.00051,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.02591,
+        "LONGITUD": -77.000549,
+        "nombre_vecino": "VECINOCASA LINDA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.026223,
+        "LONGITUD": -77.00871,
+        "nombre_vecino": "VECINOEVER ALVARE PARQUE ATAHUALPA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.026698,
+        "LONGITUD": -77.008596,
+        "nombre_vecino": "VECINOEVER ALVARE PARQUE ATAHUALPA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.0267,
+        "LONGITUD": -77.008614,
+        "nombre_vecino": "VECINOEVER ALVARE PARQUE ATAHUALPA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.027029,
+        "LONGITUD": -77.007983,
+        "nombre_vecino": "VECINOEVER ALVARE PARQUE ATAHUALPA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.027197,
+        "LONGITUD": -77.009637,
+        "nombre_vecino": "VECINOEVER ALVARE PARQUE ATAHUALPA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.0193,
+        "LONGITUD": -76.999301,
+        "nombre_vecino": "VECINOMIRCA RODRIGUEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.015104,
+        "LONGITUD": -76.997617,
+        "nombre_vecino": "CLAUDIO LULO CABANA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 14
+    },
+    {
+        "LATITUD": -12.026788,
+        "LONGITUD": -76.999643,
+        "nombre_vecino": "VICTORIA ORTIZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -12.025189,
+        "LONGITUD": -77.007597,
+        "nombre_vecino": "JULIO MARINO GARAY VEGA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.02371,
+        "LONGITUD": -76.99819,
+        "nombre_vecino": ".julio marino garay vega",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025855,
+        "LONGITUD": -76.991552,
+        "nombre_vecino": "inez mauricio inocente",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.018452,
+        "LONGITUD": -76.986214,
+        "nombre_vecino": "JOSE MALLAOPOMA PONCE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.015679,
+        "LONGITUD": -76.998397,
+        "nombre_vecino": "LEONARDO JOSE LOPEZ ROMAN",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -12.02371,
+        "LONGITUD": -76.99819,
+        "nombre_vecino": "julio marino garay vega",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.011297,
+        "LONGITUD": -76.99505,
+        "nombre_vecino": "Violeta saavedra",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.025816,
+        "LONGITUD": -76.99984,
+        "nombre_vecino": "Eduardo Velazques",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -12.020844,
+        "LONGITUD": -77.005453,
+        "nombre_vecino": "MARIBEL ROXANA JARA QUINO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.00976,
+        "LONGITUD": -76.98135,
+        "nombre_vecino": "JUAN JOSE MOSTORINO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.01679,
+        "LONGITUD": -76.98534,
+        "nombre_vecino": "Alicia Gonzales Zea",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.01044,
+        "LONGITUD": -76.97779,
+        "nombre_vecino": "Jesus Quispe",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.01188,
+        "LONGITUD": -76.9816,
+        "nombre_vecino": "JESUS QUISPE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.00957,
+        "LONGITUD": -76.9798,
+        "nombre_vecino": "Claudio aponte",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.00964,
+        "LONGITUD": -76.97885,
+        "nombre_vecino": "JUANA TELLES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.018124,
+        "LONGITUD": -76.959763,
+        "nombre_vecino": "FRIDA RAQUEL RODR\u00cdGUEZ MENDOZA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.013371,
+        "LONGITUD": -76.993122,
+        "nombre_vecino": "JORGE CONDOR",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.016697,
+        "LONGITUD": -76.983257,
+        "nombre_vecino": "ADA GIRONDA CHAVEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.024382,
+        "LONGITUD": -76.992889,
+        "nombre_vecino": "Kelly reyes \u00c1vila",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.02564,
+        "LONGITUD": -77.007241,
+        "nombre_vecino": "MARIELA ARENAS",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.02585,
+        "LONGITUD": -77.001815,
+        "nombre_vecino": "David Huapaya",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.013669,
+        "LONGITUD": -76.997486,
+        "nombre_vecino": "ANTONIO QUISPE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.014873,
+        "LONGITUD": -76.996917,
+        "nombre_vecino": "JOGENES HUAMANI",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.014815,
+        "LONGITUD": -76.99697,
+        "nombre_vecino": "DIOJANES HUAMANI",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.013377,
+        "LONGITUD": -76.979409,
+        "nombre_vecino": "BRENDI REATEGUI BRAGA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.022123,
+        "LONGITUD": -77.002359,
+        "nombre_vecino": "LEON FERNANDEZ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.028359,
+        "LONGITUD": -77.006368,
+        "nombre_vecino": "JORGE CHAVEZ ACU\u00d1A",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 16
+    },
+    {
+        "LATITUD": -12.02671,
+        "LONGITUD": -76.999116,
+        "nombre_vecino": "ERICKA LEON",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -12.021541,
+        "LONGITUD": -76.978319,
+        "nombre_vecino": "ELODORIO ILUMPO ANGELES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.021541,
+        "LONGITUD": -76.978319,
+        "nombre_vecino": "ELODORIO ILUMPO ANGELES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.025554,
+        "LONGITUD": -76.99922,
+        "nombre_vecino": "GRACIELA CALERA TALAVERA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -12.026011,
+        "LONGITUD": -76.99982,
+        "nombre_vecino": "EDUARDO VELASQUE",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 15
+    },
+    {
+        "LATITUD": -12.01956,
+        "LONGITUD": -77.002286,
+        "nombre_vecino": "JUAN CARLOS RIVAS PLATA",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 10
+    },
+    {
+        "LATITUD": -11.988038,
+        "LONGITUD": -76.99596,
+        "nombre_vecino": "Jorge Hernan ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "Jackeline de la cruz ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.937793,
+        "LONGITUD": -76.970846,
+        "nombre_vecino": "Javier Cuzco faichin",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "H\u00e9ctor medina luis Pajuelo ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.008959,
+        "LONGITUD": -77.013228,
+        "nombre_vecino": "Jos\u00e9 garnica fernandez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.022226,
+        "LONGITUD": -76.985953,
+        "nombre_vecino": "William campos",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "Lord gutierrez Ortiz ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.012002,
+        "LONGITUD": -77.003531,
+        "nombre_vecino": "Lord gutierrez ortiz",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.010992,
+        "LONGITUD": -77.014041,
+        "nombre_vecino": "Joel cantar\u00e1 ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 7
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "Jos\u00e9 castro vargas",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "Moises Silva",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.939321,
+        "LONGITUD": -76.976354,
+        "nombre_vecino": "PIER ROJAS GALLARDO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.939321,
+        "LONGITUD": -76.976354,
+        "nombre_vecino": "PIER ROJAS GALLARDO",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.982545,
+        "LONGITUD": -77.017739,
+        "nombre_vecino": "Margoth aguirre",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.998044,
+        "LONGITUD": -77.017972,
+        "nombre_vecino": "Melanie diestra valeria",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.997973,
+        "LONGITUD": -77.017638,
+        "nombre_vecino": "Melanie diestra valeria",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.997814,
+        "LONGITUD": -77.017745,
+        "nombre_vecino": "Melanie diestra valeria",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.001479,
+        "LONGITUD": -77.016865,
+        "nombre_vecino": "Joel carvajal lavado (colegio PDF pierre de  fermet) ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.001216,
+        "LONGITUD": -77.017019,
+        "nombre_vecino": "Joel carvajal lavado (colegio PDF pierre de  fermet) ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.001516,
+        "LONGITUD": -77.017081,
+        "nombre_vecino": "Joel carvajal lavado (colegio PDF pierre de  fermet) ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.033002,
+        "LONGITUD": -77.013419,
+        "nombre_vecino": "Jes\u00fas tarazona",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -12.032809,
+        "LONGITUD": -77.013266,
+        "nombre_vecino": "Jes\u00fas tarazona",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.033323,
+        "LONGITUD": -77.012889,
+        "nombre_vecino": "Jes\u00fas tarazona",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.032609,
+        "LONGITUD": -77.013601,
+        "nombre_vecino": "Jes\u00fas tarazona",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955729,
+        "LONGITUD": -76.978524,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 10
+    },
+    {
+        "LATITUD": -11.957282,
+        "LONGITUD": -76.977385,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.956872,
+        "LONGITUD": -76.976218,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955626,
+        "LONGITUD": -76.977734,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.956352,
+        "LONGITUD": -76.978884,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 7
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.955522,
+        "LONGITUD": -76.976938,
+        "nombre_vecino": "Miguel sulluchuco II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.003166,
+        "LONGITUD": -77.000057,
+        "nombre_vecino": "Asoc de Comerciantes  Mercado Los Jardines ( Luis Romani Carrizales)",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.0003169,
+        "LONGITUD": -77.000059,
+        "nombre_vecino": "Asoc de Comerciantes  Mercado Los Jardines ( Luis Romani Carrizales)",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.004959,
+        "LONGITUD": -77.005645,
+        "nombre_vecino": "Jackeline Surco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 6
+    },
+    {
+        "LATITUD": -12.00483,
+        "LONGITUD": -77.005862,
+        "nombre_vecino": "Jackeline Surco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.005159,
+        "LONGITUD": -77.005557,
+        "nombre_vecino": "Jackeline Surco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.005119,
+        "LONGITUD": -77.005462,
+        "nombre_vecino": "Jackeline Surco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.005358,
+        "LONGITUD": -77.005293,
+        "nombre_vecino": "Jackeline Surco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.00523,
+        "LONGITUD": -77.005421,
+        "nombre_vecino": "Jackeline Surco",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.9906096,
+        "LONGITUD": -77.0164702,
+        "nombre_vecino": "Susan ramirez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.9906096,
+        "LONGITUD": -77.0164702,
+        "nombre_vecino": "Susan ramirez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.9906096,
+        "LONGITUD": -77.0164702,
+        "nombre_vecino": "Susan ramirez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.9906096,
+        "LONGITUD": -77.0164702,
+        "nombre_vecino": "Susan ramirez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.9906096,
+        "LONGITUD": -77.0164702,
+        "nombre_vecino": "Susan ramirez",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.96079,
+        "LONGITUD": -76.981612,
+        "nombre_vecino": "Carmen polo timoteo ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.96079,
+        "LONGITUD": -76.981612,
+        "nombre_vecino": "Carmen polo timoteo ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.961867,
+        "LONGITUD": -76.979842,
+        "nombre_vecino": "Jorge Eduardo Ch\u00e1vez garrido",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.961867,
+        "LONGITUD": -76.979842,
+        "nombre_vecino": "Jorge Eduardo Ch\u00e1vez garrido",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.961867,
+        "LONGITUD": -76.979842,
+        "nombre_vecino": "Jorge eduardo",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.961867,
+        "LONGITUD": -76.979842,
+        "nombre_vecino": "Jorge eduardo",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.961867,
+        "LONGITUD": -76.979842,
+        "nombre_vecino": "Jorge eduardo",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.961867,
+        "LONGITUD": -76.979842,
+        "nombre_vecino": "Jorge eduardo",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.987155,
+        "LONGITUD": -77.011981,
+        "nombre_vecino": "Luis Chac\u00f3n ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 6
+    },
+    {
+        "LATITUD": -11.988123,
+        "LONGITUD": -77.012065,
+        "nombre_vecino": "Luis Chac\u00f3n ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.989004,
+        "LONGITUD": -77.012773,
+        "nombre_vecino": "Luis Chac\u00f3n ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.98782,
+        "LONGITUD": -77.012653,
+        "nombre_vecino": "Luis Chac\u00f3n ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.988395,
+        "LONGITUD": -77.012761,
+        "nombre_vecino": "Luis Chac\u00f3n ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.989157,
+        "LONGITUD": -77.012421,
+        "nombre_vecino": "Luis Chac\u00f3n ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.939783,
+        "LONGITUD": -76.998827,
+        "nombre_vecino": "Juan Luis Ramos gutierrez ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.023486,
+        "LONGITUD": -76.984659,
+        "nombre_vecino": "Maria D\u00edaz Mart\u00ednez ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.02351,
+        "LONGITUD": -76.984696,
+        "nombre_vecino": "Maria D\u00edaz Mart\u00ednez ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.94184,
+        "LONGITUD": -76.981304,
+        "nombre_vecino": "Elvis Villarroel zamora",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.94184,
+        "LONGITUD": -76.981304,
+        "nombre_vecino": "Elvis Villarroel zamora",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.938369,
+        "LONGITUD": -76.997341,
+        "nombre_vecino": "COLEGIO CASA BLANCA DE JES\u00daS (Gladys mesias vargas)",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -11.943292,
+        "LONGITUD": -76.982544,
+        "nombre_vecino": "Rosa torres fuente ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.943292,
+        "LONGITUD": -76.982544,
+        "nombre_vecino": "Rosa torres fuente ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.974996,
+        "LONGITUD": -76.988319,
+        "nombre_vecino": "Jos\u00e9 Ore Salazar ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 14
+    },
+    {
+        "LATITUD": -11.974996,
+        "LONGITUD": -76.988319,
+        "nombre_vecino": "Jos\u00e9 Ore Salazar II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 8
+    },
+    {
+        "LATITUD": -11.975066,
+        "LONGITUD": -76.988155,
+        "nombre_vecino": "Jos\u00e9 ore Salazar III ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 5
+    },
+    {
+        "LATITUD": -11.975066,
+        "LONGITUD": -76.988155,
+        "nombre_vecino": "Jos\u00e9 ore salazar IV",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.95085,
+        "LONGITUD": -76.987784,
+        "nombre_vecino": "Milagros Rivera ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "Raul idelfonso soto ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": null,
+        "LONGITUD": null,
+        "nombre_vecino": "Raul idelfonso soto II",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.016197,
+        "LONGITUD": -76.999716,
+        "nombre_vecino": "Marilin Inga",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.016894,
+        "LONGITUD": -76.99933,
+        "nombre_vecino": "Marilin Inga",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.01487,
+        "LONGITUD": -76.999113,
+        "nombre_vecino": "Cesar feliz hilario",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.974165,
+        "LONGITUD": -76.98834,
+        "nombre_vecino": "I. E Carlos no riega Jim\u00e9nez N\u00b0154",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 4
+    },
+    {
+        "LATITUD": -11.949053,
+        "LONGITUD": -76.980789,
+        "nombre_vecino": "I. E ANTONIA MORENO DE CACERES",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 1
+    },
+    {
+        "LATITUD": -12.0089,
+        "LONGITUD": -76999031.0,
+        "nombre_vecino": "Ricardo Saavedra",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -12.008832,
+        "LONGITUD": -76.9933,
+        "nombre_vecino": "Ricardo Saavedra",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.00912,
+        "LONGITUD": -76.999298,
+        "nombre_vecino": "Ricardo Saavedra",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.028128,
+        "LONGITUD": -77.011187,
+        "nombre_vecino": "Tienda Daipy",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.939383,
+        "LONGITUD": -76.976268,
+        "nombre_vecino": "Alfo haman",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.995589,
+        "LONGITUD": -77009178.0,
+        "nombre_vecino": "MATER ET MAGISTRA ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": 11.976424,
+        "LONGITUD": -77.002845,
+        "nombre_vecino": "IE Nicol\u00e1s Copernico  ( Director Jos\u00e9 Castro Vargas)",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": 11.976122,
+        "LONGITUD": -77.002116,
+        "nombre_vecino": "IE Nicol\u00e1s Copernico  ( Director Jos\u00e9 Castro Vargas)",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.942503,
+        "LONGITUD": -76.992298,
+        "nombre_vecino": "Iris de la Cruz ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 3
+    },
+    {
+        "LATITUD": -11.94245,
+        "LONGITUD": -76.992301,
+        "nombre_vecino": "Iris de la Cruz ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.942764,
+        "LONGITUD": -76.992301,
+        "nombre_vecino": "Iris de la Cruz ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -11.939765,
+        "LONGITUD": -76.598182,
+        "nombre_vecino": "Marleny  Casta\u00f1eda ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -11.940311,
+        "LONGITUD": -76.997715,
+        "nombre_vecino": "Marleny  Casta\u00f1eda ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 0
+    },
+    {
+        "LATITUD": -12.016987,
+        "LONGITUD": -77.010079,
+        "nombre_vecino": "I.E SAN BENITO LUIS ALBERTO ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 2
+    },
+    {
+        "LATITUD": -12.012118,
+        "LONGITUD": -76.998741,
+        "nombre_vecino": "I.E.P MATEM\u00c1TICO CAT\u00d3LICO SAN JUAN ",
+        "ACTIVIDAD": "OK",
+        "CONTEO": 113
+    }
+]

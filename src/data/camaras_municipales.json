@@ -1,0 +1,272 @@
+[
+    {
+        "name": "AGUILA 1",
+        "description": "Av. 9 de octubre – Av. Proceres de la Independencia (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.01184065,
+            -12.03204676
+        ]
+    },
+    {
+        "name": "AGUILA 1 FIJA",
+        "description": "Av. 9 de octubre – Av. Proceres de la Independencia (FIJA)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.01182891,
+            -12.03204382
+        ]
+    },
+    {
+        "name": "AV. LAS FLORES 7",
+        "description": "Av. Las Flores de primavera / Av. Los Tusilagos oeste (7 de las flores)(DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.01140597,
+            -12.01192534
+        ]
+    },
+    {
+        "name": "BUEN AMIGO CURVA",
+        "description": "Av. Lima – Av. La Flores de Primavera (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.01184598,
+            -12.02479694
+        ]
+    },
+    {
+        "name": "ESTACION CAJA DE AGUA",
+        "description": "Av. Peru / Av. Proceres de la Independencia (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.01178275,
+            -12.02867247
+        ]
+    },
+    {
+        "name": "FIJA CURVA BUEN AMIGO",
+        "description": "Av. Lima – Av. La Flores de Primavera (FIJA)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.01193182,
+            -12.02483892
+        ]
+    },
+    {
+        "name": "04 DE CHIMU (14)",
+        "description": "Av. Chimú – Av. Wiracocha (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.00728414,
+            -12.02713025
+        ]
+    },
+    {
+        "name": "AV. CHINCHAYSUYO - MALECON",
+        "description": "Av. Chinchaysuyo – Av. Malecón Checa (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.0000473,
+            -12.02739074
+        ]
+    },
+    {
+        "name": "AV. LAS LOMAS - AV. MALECON CHECA",
+        "description": "Av. Las Lomas – Av. Malecón Checa (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -76.99128414,
+            -12.02607843
+        ]
+    },
+    {
+        "name": "AV. LAS LOMAS - AV. MALECON FIJA",
+        "description": "Av. Las Lomas – Av. Malecón Checa (FIJA)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -76.99129487,
+            -12.02604695
+        ]
+    },
+    {
+        "name": "PIRAMIDE - TAHUANTINSUYO",
+        "description": "Av. Pirámide- Av. Tahuantinsuyo (Comisaría Zarate)(DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -77.00131818,
+            -12.02694256
+        ]
+    },
+    {
+        "name": "CAMPOY",
+        "description": "Av. Chimú – Av. Malecón (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -76.98092928,
+            -12.02454326
+        ]
+    },
+    {
+        "name": "CECOM",
+        "description": "Av Santa Rosa / Av. Los Bengalies (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -76.99613003,
+            -12.0125994
+        ]
+    },
+    {
+        "name": "CONDOMINIO CAMPOY 1",
+        "description": "URB. CAMPOY CALLE 11 (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -76.97351268,
+            -12.02216172
+        ]
+    },
+    {
+        "name": "CONDOMINIO CAMPOY 2 (11)",
+        "description": "URB. CAMPOY CALLE 5 (DOMO)",
+        "zone": "ZONA 01",
+        "coordinates": [
+            -76.97444001,
+            -12.02158146
+        ]
+    },
+    {
+        "name": "AV.JARDINES - AV PROCERES",
+        "description": "Av. Próceres de la independencia – Av. Los Jardines (FIJA)",
+        "zone": "ZONA 02",
+        "coordinates": [
+            -77.00576268,
+            -12.00577962
+        ]
+    },
+    {
+        "name": "CAM06 METRO HACIENDA",
+        "description": "Av. Proceres de la Independencia / Av. Los jardines (DOMO)",
+        "zone": "ZONA 02",
+        "coordinates": [
+            -77.01143816,
+            -12.0119883
+        ]
+    },
+    {
+        "name": "METRO PROCERES CON J",
+        "description": "Av. Próceres de la independencia – Av. Los Jardines (FIJA)",
+        "zone": "ZONA 02",
+        "coordinates": [
+            -77.00589143,
+            -12.00573765
+        ]
+    },
+    {
+        "name": "C.P LURIGANCHO (26)",
+        "description": "Av. El Sol – Calle Tavasllo",
+        "zone": "ZONA 02",
+        "coordinates": [
+            -76.9968611,
+            -11.9897345
+        ]
+    },
+    {
+        "name": "ESTACION SAN CARLOS",
+        "description": "Av. San Carlos (DOMO)",
+        "zone": "ZONA 02",
+        "coordinates": [
+            -77.00694254,
+            -11.98475181
+        ]
+    },
+    {
+        "name": "FIJA ESTACION SAN CARLOS",
+        "description": "Av. San Carlos (FIJA)",
+        "zone": "ZONA 02",
+        "coordinates": [
+            -77.00687817,
+            -11.98481478
+        ]
+    },
+    {
+        "name": "03 DE HUASCAR",
+        "description": "Av. San Martin / Av. Jose Carlos Mariategui 3 huascar (DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.0093056,
+            -11.9650838
+        ]
+    },
+    {
+        "name": "07 DE HUASCAR",
+        "description": "Av. Jose Carlos Mariategui / Av. 20 de Enero (7 de huascar) (DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.00441856,
+            -11.95803327
+        ]
+    },
+    {
+        "name": "10 DE CANTO GRANDE",
+        "description": "Av. Canto Grande – Av. San Martín (DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.00403853,
+            -11.96791168
+        ]
+    },
+    {
+        "name": "13 CANTO GRANDE",
+        "description": "Av. Canto Grande – Av. Santa Rosa (13 de canto grande)(DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.00068367,
+            -11.96267898
+        ]
+    },
+    {
+        "name": "FIJ.10 DE CANTO G.",
+        "description": "Av. Canto Grande – Av. San Martín (FIJA)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.00407072,
+            -11.96793267
+        ]
+    },
+    {
+        "name": "FIJA.10 DE CANT.G",
+        "description": "Av. Canto Grande – Av. San Martín (FIJA)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.00409217,
+            -11.96791168
+        ]
+    },
+    {
+        "name": "HIROITO AV. JOSE CARLOS MARIAT.",
+        "description": "Av. José Carlos Mariátegui – Av. Héroes del Cenepa oeste (DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -76.99214582,
+            -11.95556788
+        ]
+    },
+    {
+        "name": "PLAZA VEA LAS FLORES",
+        "description": "Av. Canto Grande – Av. Las Flores parad. 18 (DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.01514963,
+            -11.99186201
+        ]
+    },
+    {
+        "name": "TULIPANES",
+        "description": "Tulipanes / río de la plata (12 DE HUASCAR)(DOMO)",
+        "zone": "ZONA 03",
+        "coordinates": [
+            -77.00291271,
+            -11.95356147
+        ]
+    }
+]

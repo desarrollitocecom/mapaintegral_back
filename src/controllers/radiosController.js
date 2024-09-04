@@ -14,7 +14,7 @@ const getRadios = async () => {
 // Obtener una radio por ISSI
 const getRadio = async (issi) => {
     try {
-        console.log("issi: ", issi);
+        //console.log("issi: ", issi);
         const response = await Radio.findOne({ where: { issi } });
         return response || null;
     } catch (error) {
@@ -25,35 +25,45 @@ const getRadio = async (issi) => {
 
 // Crear una nueva radio
 const createRadio = async (radioData) => {
-    try {
-        const newRadio = await Radio.create(radioData);
-        return newRadio || null;
-    } catch (error) {
-        console.error('Error al crear un nuevo radio:', error.message);
+    if (radioData)
+        try {
+            const newRadio = await Radio.create(radioData);
+            return newRadio || null;
+        } catch (error) {
+            console.error('Error al crear un nuevo radio:', error.message);
+            return false;
+        }
+    else
         return false;
-    }
 };
 
 // Actualizar una radio existente por ISSI
 const updateRadio = async (issi, radioData) => {
-    try {
-        const radio = await Radio.findOne({ where: { issi } });
-        if (radio) {
-            await radio.update(radioData);
-            return radio;
-        } else {
-            return null;
+    if (issi && radioData)
+        try {
+            const radio = await Radio.findOne({ where: { issi } });
+            if (radio) {
+                await radio.update(radioData);
+                return radio;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            console.error('Error al actualizar la radio:', error.message);
+            return false;
         }
-    } catch (error) {
-        console.error('Error al actualizar la radio:', error.message);
+    else
         return false;
-    }
 };
 
 const deleteRadio = (issi) => {
     try {
-        Radio.destroy({ where: { issi } });
-        return true;
+        const radio = Radio.findOne({ where: { issi } });
+        if (radio) {
+            radio.destroy({ where: { issi } });
+            return true;
+        } else
+            return null;
     } catch (error) {
         console.error('Error al eliminar la radio:', error.message);
         return false;

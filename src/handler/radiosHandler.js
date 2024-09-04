@@ -32,6 +32,20 @@ const getRadioHandler = async (req, res) => {
 // Handler para crear una nueva radio
 const createRadioHandler = async (req, res) => {
     const radioData = req.body;
+    const errors = [];
+
+    if (!radioData.issi)
+        errors.push("Issi no es un numero o no existe");
+
+    if (!radioData.fuente)
+        errors.push("Fuente no existe o no es texto");
+
+    if (!radioData.informacion.cargo && !radioData.informacion.unidad)
+        errors.push("Informacion no existe o los campos cargo o unidad no existen");
+
+    if (errors.length > 0)
+        return res.status(400).json({ message: errors.join(", ") });
+
     try {
         const response = await createRadio(radioData);
         return res.status(201).send(response);
@@ -60,6 +74,8 @@ const updateRadioHandler = async (req, res) => {
 // Handler para eliminar una radio por ISSI
 const deleteRadioHandler = async (req, res) => {
     const { issi } = req.params;
+    if (!issi)
+        return res.status(400).json({ message: "No se detecto issi" });
     try {
         const response = await deleteRadio(issi);
         if (!response) {

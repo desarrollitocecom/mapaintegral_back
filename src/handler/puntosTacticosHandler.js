@@ -58,6 +58,16 @@ const createPuntoTacticoHandler = async (req, res) => {
 const updatePuntoTacticoHandler = async (req, res) => {
     const { id } = req.params;
     const data = req.body;
+    const errors = [];
+    if (!data.turno && !Number(data.turno))
+        errors.push("campo turno no detectado")
+    if(!data.nombre)
+        errors.push("campo nombre no detectado")
+    if(!data.zona)
+        errors.push("campo zona no detectado")
+    if(!data.puntos)
+        errors.push("el archivo geojson tiene problemas o no fue detectado")
+    //const {turno,nombre,zona,puntos} = req.body;
     try {
         const response = await updatePuntoTactico(id, data);
         if (!response) {

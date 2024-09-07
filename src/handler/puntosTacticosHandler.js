@@ -4,7 +4,7 @@ const getPuntosTacticosHandler = async (req, res) => {
     try {
         const response = await getPuntosTacticos();
         if (!response.length) {
-            return res.status(404).send({ message: "No se encontraron puntos tácticos" });
+            return res.status(200).json(response);
         }
         return res.status(200).send(response);
     } catch (error) {
@@ -15,7 +15,7 @@ const getPuntosTacticosHandler = async (req, res) => {
 
 const getPuntoTacticoByIdHandler = async (req, res) => {
     const { id } = req.params;
-    if (!id && !Number(id))
+    if (id === null || undefined)
         return res.status(400).send({ message: "error en la deteccion del id del punto tactico" });
     try {
         const response = await getPuntoTacticoById(id);
@@ -32,11 +32,11 @@ const getPuntoTacticoByIdHandler = async (req, res) => {
 const createPuntoTacticoHandler = async (req, res) => {
     const { turno, nombre, zona, puntos } = req.body;
     const errors = [];
-    if (!turno)
+    if (turno === null || undefined)
         errors.push("El campo turno es requerido");
-    if (!nombre)
+    if (nombre === null || undefined)
         errors.push("El campo nombre es requerido");
-    if (!zona)
+    if (zona === null || undefined)
         errors.push("El campo zona es requerido");
     if (!puntos && typeof puntos !== "object")
         errors.push("El archivo geojson con los puntos es requerido");
@@ -46,7 +46,7 @@ const createPuntoTacticoHandler = async (req, res) => {
     try {
         const response = await createPuntoTactico(turno, nombre, zona, puntos);
         if (!response) {
-            return res.status(400).send({ message: "No se pudo crear el punto táctico" });
+            return res.status(400).send({ message: `No se pudo crear el punto táctico ${response}` });
         }
         return res.status(201).json(response);
     } catch (error) {
@@ -57,19 +57,27 @@ const createPuntoTacticoHandler = async (req, res) => {
 
 const updatePuntoTacticoHandler = async (req, res) => {
     const { id } = req.params;
-    const data = req.body;
+    const { turno, nombre, zona, puntos } = req.body;
+    //const data = req.body;
     const errors = [];
-    if (!data.turno && !Number(data.turno))
-        errors.push("campo turno no detectado")
-    if(!data.nombre)
-        errors.push("campo nombre no detectado")
-    if(!data.zona)
-        errors.push("campo zona no detectado")
-    if(!data.puntos)
-        errors.push("el archivo geojson tiene problemas o no fue detectado")
-    //const {turno,nombre,zona,puntos} = req.body;
+
+    if (turno === null || undefined)
+        errors.push("El campo turno es requerido");
+
+    if (nombre === null || undefined)
+        errors.push("El campo nombre es requerido");
+
+    if (zona === null || undefined)
+        errors.push("El campo zona es requerido");
+
+    if (!puntos && typeof puntos !== "object")
+        errors.push("El archivo geojson con los puntos es requerido");
+
+    if (errors.length > 0)
+        return res.status(400).json({ message: errors.join(", ") });
+
     try {
-        const response = await updatePuntoTactico(id, data);
+        const response = await updatePuntoTactico(id, turno, nombre, zona, puntos);
         if (!response) {
             return res.status(404).send({ message: `No se pudo actualizar el punto táctico con ID ${id}` });
         }

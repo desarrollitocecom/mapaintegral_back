@@ -18,7 +18,7 @@ const login = async () => {
         }
         else
             console.error("Error en el inicio de sesion en Dolphin, verifica las credenciales de inicio o el endpoint - login");
-        return null;
+        return false;
     } catch (error) {
         console.error("Error en el proceso de inicio:", error.message);
         return null;

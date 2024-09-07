@@ -19,7 +19,7 @@ const getPuntosTacticos = async () => {
                 }
             ]
         });
-        return response || null;
+        return response || [];
     } catch (error) {
         console.error("Error en getPuntosTacticos:", error.message);
         return false;
@@ -53,7 +53,6 @@ const getPuntoTacticoById = async (id) => {
     }
 };
 
-// Crear un nuevo punto táctico
 const createPuntoTactico = async (turno, nombre, zona, puntos) => {
     console.log("datos: ", turno, nombre, zona, puntos);
     try {
@@ -71,11 +70,16 @@ const createPuntoTactico = async (turno, nombre, zona, puntos) => {
 };
 
 // Actualizar un punto táctico
-const updatePuntoTactico = async (id, data) => {
+const updatePuntoTactico = async (id, turno, nombre, zona, puntos) => {
     try {
         const puntoTactico = await PuntoTactico.findByPk(id);
         if (puntoTactico) {
-            await puntoTactico.update(data);
+            await puntoTactico.update({
+                turno: turno,
+                nombre: nombre,
+                zona: zona,
+                puntos: puntos
+            });
             return puntoTactico;
         } else {
             return null;
@@ -85,6 +89,7 @@ const updatePuntoTactico = async (id, data) => {
         return false;
     }
 };
+
 
 // Eliminar un punto táctico
 const deletePuntoTactico = async (id) => {

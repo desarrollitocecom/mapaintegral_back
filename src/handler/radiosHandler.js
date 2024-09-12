@@ -5,7 +5,7 @@ const getRadiosHandler = async (req, res) => {
     try {
         const response = await getRadios();
         if (!response.length) {
-            return res.status(404).send({ message: "No se encontraron radios" });
+            return res.status(204).send({ message: "No se encontraron radios" });
         }
         return res.status(200).send(response);
     } catch (error) {
@@ -20,7 +20,7 @@ const getRadioHandler = async (req, res) => {
     try {
         const response = await getRadio(issi);
         if (!response) {
-            return res.status(404).send({ message: `No se encontró la radio con ISSI ${issi}` });
+            return res.status(204).send({ message: `No se encontró la radio con ISSI ${issi}` });
         }
         return res.status(200).send(response);
     } catch (error) {
@@ -48,6 +48,8 @@ const createRadioHandler = async (req, res) => {
 
     try {
         const response = await createRadio(radioData);
+        if (!response)
+            return res.status(409).json({ message: "conflicto al crear la radio" });
         return res.status(201).send(response);
     } catch (error) {
         console.error("Error al crear la radio:", error.message);
@@ -62,7 +64,7 @@ const updateRadioHandler = async (req, res) => {
     try {
         const response = await updateRadio(issi, radioData);
         if (!response) {
-            return res.status(404).send({ message: `No se encontró la radio con ISSI ${issi}` });
+            return res.status(204).send({ message: `No se encontró la radio con ISSI ${issi}` });
         }
         return res.status(200).send(response);
     } catch (error) {
@@ -79,7 +81,7 @@ const deleteRadioHandler = async (req, res) => {
     try {
         const response = await deleteRadio(issi);
         if (!response) {
-            return res.status(404).send({ message: `No se encontró la radio con ISSI ${issi}` });
+            return res.status(204).json({ message: `No se encontró la radio con ISSI ${issi}` });
         }
         return res.status(200).send({ message: `Radio con ISSI ${issi} eliminada correctamente` });
     } catch (error) {

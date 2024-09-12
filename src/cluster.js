@@ -5,8 +5,13 @@ const numCPUs = os.cpus().length;
 const sequelize = require("./database");
 const { login } = require("./controllers/loginController");
 const { setUnidades, monitorIssis } = require("./checkers/vigilanciaIssis");
+const { socketServer } = require("./server");
+const cache = require("./cache");
+
+const { PORT } = process.env;
 
 if (cluster.isPrimary) {
+
     login(); // logeas para levantar datos de sesion en caso no se haya llamado a unidades realtime antes de algun peticion que requiera sesion de inicio.
     console.log(`Master process ${process.pid} is running`);
 
@@ -27,14 +32,24 @@ if (cluster.isPrimary) {
         console.log(`Worker ${worker.process.pid} died. Restarting...`);
         cluster.fork(); // Crear un nuevo worker si uno muere
     });
+    
     setInterval(setUnidades, 10000);
-    setInterval(monitorIssis, 10000);
+    setInterval(monitorIssis, 5000);
 } else {
     console.log(`Worker process ${process.pid} started`);
-    require("./server");  // Solo levantamos el servidor en los workers
+    socketServer.listen(PORT, async () => {
+        try {
+            const log = await login();
+            if (log)
+                console.log(`Servidor corriendo en el puerto ${PORT} & logeado correctamente con ${cache.get("sesion")._empresa}`);
+            else
+                console.error("Error en el inicio de sesión en Dolphin, verifica las credenciales de inicio o el endpoint - fallo en el server");
+        } catch (error) {
+            console.error("No se pudo iniciar el servidor: ", error);
+        }
+    });
+    //require("./server");  // Solo levantamos el servidor en los workers
 }
-
-
 /* 
 
 Master: El bloque if (cluster.isMaster) se ejecuta en el proceso principal. Aquí se crean los procesos workers usando cluster.fork(), que hace una copia del código en cada núcleo del procesador disponible.

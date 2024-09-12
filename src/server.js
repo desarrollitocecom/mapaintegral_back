@@ -1,49 +1,72 @@
 require("dotenv").config();
 const express = require('express');
 const server = express();
+const http = require('http');
+const socketServer = http.createServer(server);
 const routes = require("./routes/index");
 const cors = require('cors');
-const cache = require("./cache"); // Supongo que ya tienes una solución de caché
-const { login } = require("./controllers/loginController");
-const sequelize = require("./database");
-const redisClient = require('./redisClient'); // Importar cliente Redis
-const morgan = require('morgan');
+//const morgan = require('morgan');
+const socketIo = require('socket.io');
+const redisAdapter = require('socket.io-redis');
+const cache = require("./cache");
+const redisClient = require("./redisClient");
+const { fixArrayRedis } = require("./helpers/calcHelper");
+
 
 require("./models/Zona");
 require("./models/Turno");
-require("../src/models/Radio");
-require("../src/models/PuntosTacticos");
+require("./models/Radio");
+require("./models/PuntosTacticos");
+require("./models/Alerta");
 
-const { PORT } = process.env;
-
-//server.use(morgan('dev'));
 // Middleware para permitir CORS desde cualquier origen
 server.use(cors());
 
-// Middleware para parsear JSON
+// Middleware para parsear JSON y formularios
 server.use(express.json());
-
-// Middleware para parsear datos URL-encoded (como los enviados por formularios)
 server.use(express.urlencoded({ extended: true }));
 
-// Usa las rutas definidas en tu archivo routes/index.js
+// Rutas
 server.use("/", routes);
 
-// Inicia el servidor en el puerto
-server.listen(PORT, async () => {
-  try {
-    const log = await login();
-    //await sequelize.authenticate(); // Verifica si la conexión es exitosa
-    //console.log('Conexión a la base de datos establecida correctamente.');
-    //await sequelize.sync({force: true });
-    //await redisClient.connect();
-    if (log)
-      console.log(`Servidor corriendo en el puerto ${PORT} & logeado correctamente con ${cache.get("sesion")._empresa}`);
-    else
-      console.error("Error en el inicio de sesión en Dolphin, verifica las credenciales de inicio o el endpoint - fallo en el server");
-  } catch (error) {
-    console.error("No se pudo iniciar el servidor: ", error);
+// Configuración de Socket.IO
+const io = socketIo(socketServer, {
+  cors: {
+    origin: "*",  // Permitir todos los orígenes, o especificar el origen que necesites
+    methods: ["GET", "POST"],  // Métodos permitidos
+    credentials: true  // Habilitar envío de cookies si lo necesitas
   }
 });
 
-module.exports = cache;
+const getAlerts = async () => {
+  try {
+    if (!redisClient.isOpen)
+      await redisClient.connect();
+    const alerts = await redisClient.lRange("alerts", 0, -1);
+    return alerts.length > 0 ? alerts : [];
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+io.adapter(redisAdapter({ host: 'localhost', port: 6379 })); // para conectar a los workers entre ellos se usa redis y este adaptador
+
+io.on('connection', async (socket) => {
+  console.log('Nuevo cliente conectado');
+
+  const alerts = fixArrayRedis(await getAlerts());
+
+  socket.emit("alerta", alerts);
+  socket.emit("welcome", "bien perro, lo hiciste")
+
+  socket.on('welcome', async (data) => {
+    console.log('Alerta recibida:', data);
+  });
+
+  socket.on('disconnect', () => {
+    //console.log('Cliente desconectado');
+  });
+
+});
+
+module.exports = { io, socketServer };

@@ -56,9 +56,9 @@ const updateRadio = async (issi, radioData) => {
         return false;
 };
 
-const deleteRadio = (issi) => {
+const deleteRadio = async (issi) => {
     try {
-        const radio = Radio.findOne({ where: { issi } });
+        const radio = await Radio.findOne({ where: { issi } });
         if (radio) {
             radio.destroy({ where: { issi } });
             return true;

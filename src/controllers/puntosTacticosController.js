@@ -54,7 +54,6 @@ const getPuntoTacticoById = async (id) => {
 };
 
 const createPuntoTactico = async (turno, nombre, zona, puntos) => {
-    console.log("datos: ", turno, nombre, zona, puntos);
     try {
         const newPuntoTactico = await PuntoTactico.create({
             turno: turno,

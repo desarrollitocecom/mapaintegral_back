@@ -26,6 +26,8 @@
     "querystring": "^0.2.1",
     "redis": "^4.7.0",
     "sequelize": "^6.37.3",
+    "socket.io": "^4.7.5",
+    "socket.io-redis": "^6.1.1",
     "turf": "^3.0.14"
   }
 }

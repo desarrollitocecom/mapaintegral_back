@@ -17,11 +17,11 @@ const Radio = sequelize.define('Radio', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    informacion:{
+    informacion: {
         type: DataTypes.JSONB,
         allowNull: false,
     },
-    
+
 }, {
     // Opciones del modelo
     tableName: 'Radios',

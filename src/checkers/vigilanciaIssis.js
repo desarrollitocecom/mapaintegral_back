@@ -9,11 +9,6 @@ const { io } = require("../server");
 const { getRadios } = require("../controllers/radiosController");
 const { createAlert, closeAlert, getActiveAlert } = require("../controllers/alertasController");
 const { getPuntoTacticoById } = require("../controllers/puntosTacticosController");
-//const cache = require("../cache");
-
-//const alerts = new Set();
-
-
 
 const monitorIssis = async () => {
     const alertsCache = [];
@@ -30,7 +25,7 @@ const monitorIssis = async () => {
             const centerPoint = [roundTo(point.latitud), roundTo(point.longitud)];
             const isInside = checkIssiInArea(position, centerPoint);
             const response = await getActiveAlert(issi);
-            //console.log(isInside, issi);
+            console.log(isInside, issi);
             //console.log("response", response);
             //console.log(response);
             const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
@@ -54,19 +49,9 @@ const monitorIssis = async () => {
                         };
                         // Añadir la alerta al array
                         // Recuperar el array de alertas del caché
-
                         await redisClient.rPush('alerts', JSON.stringify(alertObject));
-                        /*alertsCache = cache.get("alerts") || [];
-
-                        // Añadir la nueva alerta al array en la caché
-                        alertsCache.push(alertObject);
-
-                        // Almacenar el array de alertas actualizado en el caché
-                        cache.set("alerts", alertsCache);*/
-
                         const a = await redisClient.lRange("alerts", 0, -1);
                         const b = fixArrayRedis(a);
-                        //console.log(alertsCache);
                         io.emit('alerta', b);  // Emitir desde la caché
                         return;
                     }
@@ -78,7 +63,6 @@ const monitorIssis = async () => {
             } else if (isInside === true && response && response.is_inside === false) {
 
                 try {
-                    //console.log("Estoy cerrando la alerta", response.issi);
                     // Cerrar la alerta
                     const a = await closeAlert(response.id);
                     console.log(`Alerta cerrada para ISSI ${response.issi}:`);
@@ -88,10 +72,9 @@ const monitorIssis = async () => {
                     alertsArray = alertsArray.filter(alert => alert.alertid !== alertIdToRemove);
                     await redisClient.del("alerts");
                     for (const alert of alertsArray) {
-                        alert.message = `ISSI ${issi} ha salido del área : ${pointInfo.nombre}`;
                         await redisClient.rPush("alerts", JSON.stringify(alert));
                     }
-                    io.emit('alerta', alertsCache);  // Emitir desde la caché
+                    io.emit('alerta', alertsArray);  // Emitir desde la caché
                     return;
                 } catch (error) {
                     console.error(`Error al cerrar la alerta para ISSI ${issi}:`, error);
@@ -101,10 +84,7 @@ const monitorIssis = async () => {
     }
     const alertsList = await redisClient.lRange("alerts", 0, -1);
     let alertsArray = alertsList.map(alert => JSON.parse(alert));
-    for (const alert of alertsArray) {
-        await redisClient.rPush("alerts", JSON.stringify(alert));
-    }
-    io.emit('alerta', alertsCache);  // Emitir desde la caché
+    io.emit('alerta', alertsArray);  // Emitir desde la caché
 
 };
 
@@ -201,35 +181,5 @@ const setUnidades = async () => {
     }
 
 };
-
-// Función para consultar la API de Unidades y almacenar en Redis
-/*const setUnidades = async () => {
-
-    const unidadespayload = qs.stringify({
-        vidusuario: cache.get("sesion")._idusuario,
-        vidtipo: 0,
-        videstado: "TODOS",
-        vtipousuario: cache.get("sesion")._tipo,
-        vorden: 1,
-        vissi: ""
-    });
-
-    try {
-        const { data } = await getRealTimeUnidades(unidadespayload);
-        if (!redisClient.isOpen) {
-            await redisClient.connect();
-        }
-        data.map(async (unidad) => {
-            const issi = unidad._issi;
-            await redisClient.hSet(`unidades:${issi}`, {
-                latitud: unidad._latitud,
-                longitud: unidad._longitud
-            })
-        });
-
-    } catch (error) {
-        console.error('Error actualizando setUnidades:', error);
-    }
-};*/
 
 module.exports = { setUnidades, monitorIssis }

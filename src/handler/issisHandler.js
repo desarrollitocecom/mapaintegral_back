@@ -101,7 +101,6 @@ const deleteIssiFromPointHandler = async (req, res) => {
     const { issi } = req.params;
     try {
         const result = await deleteIssiFromPoint(issi);
-
         if (result === null) {
             return res.status(404).json({ message: 'No se eliminó ninguna ISSI, posiblemente no existía.' });
         } else if (result === false) {

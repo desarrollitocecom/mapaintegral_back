@@ -82,7 +82,6 @@ const deleteIssiFromPoint = async (issi, alertid) => {
             alertsArray = alertsArray.filter(alert => alert.issi !== alertIdToRemove);
             await redisClient.del("alerts");
             for (const alert of alertsArray) {
-                alert.message = `ISSI ${issi} ha salido del área : ${pointInfo.nombre}`;
                 await redisClient.rPush("alerts", JSON.stringify(alert));
             }
             //io.emit("alerta",alertsArray);

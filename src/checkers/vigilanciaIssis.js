@@ -42,7 +42,7 @@ const monitorIssis = async () => {
             const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
             const response = await getActiveAlert(issi);
             console.log(isInside, issi);
-            console.log("response: ",response);
+            // console.log("response: ",response);
             const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
             const pointInfo = await getPuntoTacticoById(issiInfo.punto_index);
             // Caso 1: ISSI fuera del área y no tiene alerta

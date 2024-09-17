@@ -84,7 +84,7 @@ const getPointInfoHandler = async (req, res) => {
             const issi = key.split(":")[1];
             const { latitud, longitud, punto_index, feature_index } = await redisClient.hGetAll(key);
             //console.log("API:", latitud, longitud, punto_index, feature_index);
-            if (punto_index == punto_index_api && feature_index == feature_index_api)
+            if (latitud == latitud_api && longitud == longitud_api)
                 issisMatched.push(issi);
         }
 

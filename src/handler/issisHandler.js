@@ -3,7 +3,7 @@ const { getIssiInfo, getPointInfo, addIssi, deleteIssiFromPoint } = require("../
 
 const addIssiHandler = async (req, res) => {
 
-    const { issi, latitud, longitud, punto_index, feature_index } = req.body;
+    const { issi, latitud, longitud, punto_index, feature_index, options } = req.body;
     const errors = [];
     if (issi === null || undefined)
         errors.push("no se detecto issi");
@@ -15,12 +15,16 @@ const addIssiHandler = async (req, res) => {
         errors.push("no se detecto punto_index");
     if (feature_index === null || undefined)
         errors.push("no se detecto feature_index");
+    if (typeof options !== "object" && Array.isArray(options))
+        errors.push("no se detecto que options sea un objeto")
+    //if (options.tipo === undefined && options.valor === undefined)
+    // errors.push("no se detecto que options tenga propiedades figure o valor")
     if (errors.length > 0)
         return res.status(400).json({ error: errors.join(", ") });
-
+    console.log("options", options);
     try {
-        const response = await addIssi(issi, latitud, longitud, punto_index, feature_index);
-        if (response === 4)
+        const response = await addIssi(issi, latitud, longitud, punto_index, feature_index, options);
+        if (response === 5)
             return res.status(201).json({ meesage: `${issi} agregada satisfactoriamente` });
         else if (response >= 0 && response < 4)
             return res.status(200).json({ meesage: `${issi} actualizada satisfactoriamente` });
@@ -28,7 +32,7 @@ const addIssiHandler = async (req, res) => {
             return res.status(400).json({ message: `Error al agregar la ISSI ${issi}`, status: response });
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ message: `Error en addIssiHandler ${error.message}` });
+        return res.status(500).json({ message: `Error en addIssiHandler: ${error.message}` });
     }
 };
 

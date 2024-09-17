@@ -15,17 +15,19 @@ const getIssiInfo = async (id) => {
     }
 }
 
-const addIssi = async (issi, latitud, longitud, punto_index, feature_index) => {
-    console.log("addIssi: ", issi, latitud, longitud, punto_index, feature_index);
+const addIssi = async (issi, latitud, longitud, punto_index, feature_index, options) => {
+    console.log("addIssi: ", issi, latitud, longitud, punto_index, feature_index, options);
     if (!redisClient.isOpen) {
         await redisClient.connect();
     }
+    const serializedOptions = JSON.stringify(options);
     try {
         const response = await redisClient.hSet(`vigilancia:${issi}`, {
             latitud: latitud,
             longitud: longitud,
             punto_index: punto_index,
-            feature_index: feature_index
+            feature_index: feature_index,
+            options: serializedOptions
         });
         console.log("addIssi response: ", response);
         return response;
@@ -74,7 +76,6 @@ const deleteIssiFromPoint = async (issi, alertid) => {
         try {
             const response = await redisClient.del(`vigilancia:${issi}`);
             const reponse = await deleteAlert(issi);
-            await redisClient.del(`vigilancia:${issi}`)
             //
             let alertsList = await redisClient.lRange("alerts", 0, -1);
             let alertsArray = alertsList.map(alert => JSON.parse(alert));
@@ -93,7 +94,6 @@ const deleteIssiFromPoint = async (issi, alertid) => {
     }
     // Caso 2: Eliminar todas las ISSIs si no se proporciona una ISSI específica
     else {
-        console.log("llega:", issi);
         try {
             const keys = await redisClient.keys(`vigilancia:*`);
             if (keys.length > 0) {
@@ -104,7 +104,9 @@ const deleteIssiFromPoint = async (issi, alertid) => {
                     await deleteAlert(issi);
                     await redisClient.del(`vigilancia:${issi}`);
                 }
+                await redisClient.del("alerts");
                 return response // Retorna el número de eliminaciones o null si no se eliminó nada
+
             } else
                 return null; // Retorna null si no había claves que eliminar
         } catch (error) {

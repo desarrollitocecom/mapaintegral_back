@@ -18,6 +18,8 @@ require("./models/Turno");
 require("./models/Radio");
 require("./models/PuntosTacticos");
 require("./models/Alerta");
+require("./models/Subsectores");
+require("./models/PuntosImportantes");
 
 // Middleware para permitir CORS desde cualquier origen
 server.use(cors());

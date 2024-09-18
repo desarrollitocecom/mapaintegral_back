@@ -44,7 +44,8 @@ const monitorIssis = async () => {
             console.log(isInside, issi);
             // console.log("response: ",response);
             const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
-            const pointInfo = await getPuntoTacticoById(issiInfo.punto_index);
+            const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
+            //console.log("pointinfo:", pointInfo);
             // Caso 1: ISSI fuera del área y no tiene alerta
             if (isInside === false && (response === null || (response && response.is_inside === true))) {
                 try {
@@ -56,7 +57,7 @@ const monitorIssis = async () => {
                         // Crear objeto de alerta para emitir a través de Socket.IO
                         const alertObject = {
                             issi,
-                            message: `ISSI ${issi} ha salido del área : ${pointInfo.nombre}`,
+                            message: `ISSI ${issi} ha salido del área ${pointInfo !== false ? pointInfo.nombre : ""}`,
                             position, // Posición actual de la ISSI
                             point: centerPoint, // Centro del área vigilada
                             punto_index: issiInfo.punto_index,

@@ -62,7 +62,8 @@ const monitorIssis = async () => {
                             punto_index: issiInfo.punto_index,
                             feature_index: issiInfo.feature_index,
                             alertid: newAlert.id, // ID de la alerta recién creada
-                            isInside: false
+                            isInside: false,
+                            options: JSON.parse(issiInfo.options)
                         };
                         // Añadir la alerta al array
                         // Recuperar el array de alertas del caché

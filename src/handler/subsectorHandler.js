@@ -10,11 +10,13 @@ const getAllSubsectoresHandler = async (req, res) => {
                 message: "No se encontraron subsectores."
             });
         }
+        console.log(subsectores);
         return res.status(200).json({
             success: true,
             message: "Subsectores obtenidos con éxito.",
             data: subsectores
         });
+
     } catch (error) {
         return res.status(500).json({
             success: false,

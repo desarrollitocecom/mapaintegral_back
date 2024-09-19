@@ -86,8 +86,8 @@ const getPointInfoHandler = async (req, res) => {
             const issi = key.split(":")[1];
             const { latitud, longitud, punto_index, feature_index, options } = await redisClient.hGetAll(key);
             const options_formatted = JSON.parse(options);
-            console.log("options_formatted: ", options_formatted);
-            console.log("CONDICION: ", options_api.valor == options_formatted.valor);
+            //console.log("options_formatted: ", options_formatted);
+            //console.log("CONDICION: ", options_api.valor == options_formatted.valor);
             //console.log("API:", latitud, longitud, punto_index, feature_index);
             if (latitud && longitud) {
                 if (latitud == latitud_api && longitud == longitud_api)

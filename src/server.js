@@ -12,7 +12,6 @@ const cache = require("./cache");
 const redisClient = require("./redisClient");
 const { fixArrayRedis } = require("./helpers/calcHelper");
 const { roundTo } = require("./helpers/calcHelper");
-const { type } = require("os");
 
 
 require("./models/Zona");
@@ -68,8 +67,8 @@ io.on('connection', async (socket) => {
   socket.on('ubicacion', async (data) => {
     try {
       // Estructura esperada del 'data': { id, lat, lng, timestamp }
+
       const { deviceId, latitude, longitude } = data;
-      //const fecha = new Date();
       const x = roundTo(longitude);
       const y = roundTo(latitude);
       // Guardar la ubicación en Redis
@@ -77,12 +76,14 @@ io.on('connection', async (socket) => {
         {
           longitude: x,
           latitude: y,
-          member: deviceId
+          member: deviceId,
         });
       console.log(`Ubicación guardada para ${deviceId}: (${latitude}, ${longitude}) a las `);
     } catch (error) {
       console.error('Error al procesar la ubicación:', error);
     }
+
+
   });
 
   // Evento cuando el cliente se desconecta

@@ -5,6 +5,7 @@ const numCPUs = os.cpus().length;
 const sequelize = require("./database");
 const { login } = require("./controllers/loginController");
 const { setUnidades, monitorIssis } = require("./checkers/vigilanciaIssis");
+const { getUbicaciones } = require("./sockets/posiciones");
 const { socketServer } = require("./server");
 const cache = require("./cache");
 
@@ -32,9 +33,10 @@ if (cluster.isPrimary) {
         console.log(`Worker ${worker.process.pid} died. Restarting...`);
         cluster.fork(); // Crear un nuevo worker si uno muere
     });
-    
+
     setInterval(setUnidades, 10000);
     setInterval(monitorIssis, 5000);
+    setInterval(getUbicaciones, 15000);
 } else {
     console.log(`Worker process ${process.pid} started`);
     socketServer.listen(PORT, async () => {

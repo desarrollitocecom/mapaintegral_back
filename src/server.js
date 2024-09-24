@@ -68,7 +68,7 @@ io.on('connection', async (socket) => {
     try {
       // Estructura esperada del 'data': { id, lat, lng, timestamp }
 
-      const { deviceId, latitude, longitude } = data;
+      const { member, latitude, longitude } = data;
       const x = roundTo(longitude);
       const y = roundTo(latitude);
       // Guardar la ubicación en Redis
@@ -76,9 +76,9 @@ io.on('connection', async (socket) => {
         {
           longitude: x,
           latitude: y,
-          member: deviceId,
+          member: member,
         });
-      console.log(`Ubicación guardada para ${deviceId}: (${latitude}, ${longitude}) a las `);
+      console.log(`Ubicación guardada para ${member}: (${latitude}, ${longitude}) a las `);
     } catch (error) {
       console.error('Error al procesar la ubicación:', error);
     }

@@ -117,9 +117,54 @@ const monitorIssis = async () => {
     if (alertsArray.length === 0)
         alertsArray = [];
     io.emit('alerta', alertsArray);  // Emitir desde la caché
-
-
 };
+
+/*const monitorIssis = async () => {
+    if (!redisClient.isOpen) await redisClient.connect();
+    const issis = await redisClient.keys('vigilancia:*');
+    
+    if (issis.length > 0) {
+        for (const key of issis) {
+            const issi = key.split(':')[1];
+            const { point, position } = await getIssiInfo(issi);
+            const centerPoint = [roundTo(point.latitud), roundTo(point.longitud)];
+            const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
+            const response = await getActiveAlert(issi);
+            const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
+            const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
+            
+            if (!isInside && (!response || response.is_inside)) {
+                try {
+                    await deleteAlert(issiInfo.issi);
+                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${pointInfo.nombre}`);
+                    if (newAlert) {
+                        const alertObject = {
+                            issi, message: `ISSI ${issi} ha salido del área ${pointInfo ? pointInfo.nombre : ""}`,
+                            position, point: centerPoint, punto_index: issiInfo.punto_index, feature_index: issiInfo.feature_index,
+                            alertid: newAlert.id, isInside: false, options: JSON.parse(issiInfo.options)
+                        };
+                        await redisClient.rPush('alerts', JSON.stringify(alertObject));
+                        io.emit('alerta', fixArrayRedis(await redisClient.lRange("alerts", 0, -1)));
+                        return;
+                    }
+                } catch (error) { console.error(`Error al crear la alerta para ISSI ${issi}:`, error); }
+            } else if (isInside && response && !response.is_inside) {
+                try {
+                    await closeAlert(response.id);
+                    let alertsArray = (await redisClient.lRange("alerts", 0, -1)).map(alert => JSON.parse(alert)).map(alert =>
+                        alert.alertid === response.id ? { ...alert, isInside: true, message: `ISSI ${issi} ha regresado al área: ${pointInfo.nombre}` } : alert);
+                    await redisClient.del("alerts");
+                    for (const alert of alertsArray) await redisClient.rPush("alerts", JSON.stringify(alert));
+                    io.emit('alerta', alertsArray);
+                    return;
+                } catch (error) { console.error(`Error al cerrar la alerta para ISSI ${issi}:`, error); }
+            }
+        }
+    }
+    let alertsArray = (await redisClient.lRange("alerts", 0, -1)).map(alert => JSON.parse(alert)).filter(alert => !alert.isInside);
+    io.emit('alerta', alertsArray.length === 0 ? [] : alertsArray);
+};*/
+
 
 const setUnidades = async () => {
     let unidades = [];

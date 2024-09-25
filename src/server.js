@@ -21,6 +21,7 @@ require("./models/PuntosTacticos");
 require("./models/Alerta");
 require("./models/Subsectores");
 require("./models/PuntosImportantes");
+require("./models/Usuario");
 
 // Middleware para permitir CORS desde cualquier origen
 server.use(cors());
@@ -71,6 +72,7 @@ io.on('connection', async (socket) => {
       const { member, latitude, longitude } = data;
       const x = roundTo(longitude);
       const y = roundTo(latitude);
+      const timestamp = new Date().toISOString(); // Obtener la hora en formato ISO
       // Guardar la ubicación en Redis
       await redisClient.geoAdd('ubicaciones',
         {
@@ -78,7 +80,12 @@ io.on('connection', async (socket) => {
           latitude: y,
           member: member,
         });
-      console.log(`Ubicación guardada para ${member}: (${latitude}, ${longitude}) a las `);
+      // Guardar el timestamp en un hash asociado al 'member'
+      await redisClient.hSet(`ubicacion:${member}`, {
+        timestamp: timestamp
+      });
+      
+      console.log(`Ubicación guardada para ${member}: (${latitude}, ${longitude}) a las ${timestamp}`);
     } catch (error) {
       console.error('Error al procesar la ubicación:', error);
     }

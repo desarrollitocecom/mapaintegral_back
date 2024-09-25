@@ -1,37 +1,39 @@
 const redisClient = require("../redisClient");
 const { io } = require("../server");
+const { getUser } = require("../controllers/usuariosController");
 
 const getUbicaciones = async () => {
     try {
         // Obtener los IDs de los teléfonos (miembros del sorted set)
         const telefonos = await redisClient.zRange("ubicaciones", 0, -1);
-        console.log("telefono:", telefonos);
 
         if (telefonos.length === 0) {
             return [];
         }
-
-        const fecha = new Date();
-
         // Usar Promise.all para resolver todas las promesas del map
         const posiciones = await Promise.all(
             telefonos.map(async (telf, index) => {
                 const posicion = await redisClient.geoPos("ubicaciones", telf);
-                //console.log(`index ${index} :`, posicion);
-                // Aseguramos que posicion no sea null o undefined
-                //if (posicion && posicion.latitude && posicion.longitude) 
+                const date = await redisClient.hGetAll(`ubicacion:${telf}`);
+                const { dataValues } = await getUser(telf);
+
                 return {
                     id: telf,
                     position: posicion,
-                    date: fecha
+                    date: date.timestamp,
+                    nombres: dataValues.nombres,
+                    apellidos: dataValues.apellidos,
+                    telefono: dataValues.telefono,
+                    dni: dataValues.dni,
+                    turno: dataValues.TurnoAsociado.dataValues.nombre,
+                    superior: dataValues.superior,
                 };
-
             })
         );
 
         // Emitir las posiciones resueltas a través de Socket.IO
         io.emit("celpos", posiciones);
-        console.log("posiciones emitidas:", posiciones);
+        //console.log("posiciones emitidas:", date.timestamp);
 
         return posiciones;
 

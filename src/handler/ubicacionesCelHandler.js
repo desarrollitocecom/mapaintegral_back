@@ -10,10 +10,10 @@ const getUbicacionesCelulares = async (req, res) => {
     try {
         // Obtener los IDs de los teléfonos (miembros del sorted set)
         const telefonos = await redisClient.zRange("ubicaciones", 0, -1);
-        console.log("telefono:", telefonos);
+        //console.log("telefono:", telefonos);
 
         if (telefonos.length === 0) {
-            return [];
+            return res.status(201).json({ posiciones:[] });
         }
 
         const fecha = new Date();
@@ -30,12 +30,11 @@ const getUbicacionesCelulares = async (req, res) => {
                     position: posicion,
                     date: fecha
                 };
-
             })
         );
 
         // Emitir las posiciones resueltas a través de Socket.IO
-        console.log("posiciones emitidas:", posiciones);
+        //console.log("posiciones emitidas:", posiciones);
         return res.status(201).json({ posiciones });
 
     } catch (error) {

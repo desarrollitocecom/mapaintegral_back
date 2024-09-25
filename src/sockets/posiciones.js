@@ -6,7 +6,6 @@ const getUbicaciones = async () => {
     try {
         // Obtener los IDs de los teléfonos (miembros del sorted set)
         const telefonos = await redisClient.zRange("ubicaciones", 0, -1);
-
         if (telefonos.length === 0) {
             return [];
         }

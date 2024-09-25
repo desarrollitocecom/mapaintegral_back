@@ -3,17 +3,17 @@ const { getUser } = require("../controllers/usuariosController");
 
 const getUbicacionesCel = async () => {
 
+    if (!redisClient.isOpen)
+        await redisClient.connect();
+    
     try {
         // Obtener los IDs de los teléfonos (miembros del sorted set)
-        const telefonos = redisClient.zRange("ubicaciones", 0, -1);
+        const telefonos = await redisClient.zRange("ubicaciones", 0, -1);
         //console.log("telefono:", telefonos);
-
         if (telefonos.length === 0) {
             return [];
         }
-
-        const fecha = new Date();
-
+        
         // Usar Promise.all para resolver todas las promesas del map
         const posiciones = await Promise.all(
             telefonos.map(async (telf, index) => {
@@ -34,15 +34,13 @@ const getUbicacionesCel = async () => {
                 };
             })
         );
-
         // Emitir las posiciones resueltas a través de Socket.IO
-        io.emit("celpos", posiciones);
+        //io.emit("celpos", posiciones);
         //console.log("posiciones emitidas:", posiciones);
         return posiciones;
-
     } catch (error) {
         console.error("Error obteniendo ubicaciones:", error);
-        return [];
+        return null;
     }
 
 };

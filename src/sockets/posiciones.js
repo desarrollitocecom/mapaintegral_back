@@ -16,7 +16,7 @@ const getUbicaciones = async () => {
                 const posicion = await redisClient.geoPos("ubicaciones", telf);
                 const date = await redisClient.hGetAll(`ubicacion:${telf}`);
                 const { dataValues } = await getUser(telf);
-
+                const { TurnoAsociado: { nombre } } = dataValues;
                 return {
                     id: telf,
                     position: posicion,
@@ -25,7 +25,7 @@ const getUbicaciones = async () => {
                     apellidos: dataValues.apellidos,
                     telefono: dataValues.telefono,
                     dni: dataValues.dni,
-                    turno: dataValues.TurnoAsociado.dataValues.nombre,
+                    turno: nombre,
                     superior: dataValues.superior,
                 };
             })

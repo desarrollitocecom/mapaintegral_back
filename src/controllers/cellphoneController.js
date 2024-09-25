@@ -1,6 +1,7 @@
 const redisClient = require("../redisClient");
+const { getUser } = require("../controllers/usuariosController");
 
-const getUbicacionesCel = () => {
+const getUbicacionesCel = async () => {
 
     try {
         // Obtener los IDs de los teléfonos (miembros del sorted set)
@@ -14,23 +15,29 @@ const getUbicacionesCel = () => {
         const fecha = new Date();
 
         // Usar Promise.all para resolver todas las promesas del map
-        const posiciones = telefonos.map(async (telf, index) => {
-            const posicion = redisClient.geoPos("ubicaciones", telf);
-            //console.log(`index ${index} :`, posicion);
-            // Aseguramos que posicion no sea null o undefined
-            //if (posicion && posicion.latitude && posicion.longitude) 
-            return {
-                id: telf,
-                position: posicion,
-                date: fecha
-            };
-
-        });
+        const posiciones = await Promise.all(
+            telefonos.map(async (telf, index) => {
+                const posicion = await redisClient.geoPos("ubicaciones", telf);
+                const date = await redisClient.hGetAll(`ubicacion:${telf}`);
+                const { dataValues } = await getUser(telf);
+                const { TurnoAsociado: { nombre } } = dataValues;
+                return {
+                    id: telf,
+                    position: posicion,
+                    date: date.timestamp,
+                    nombres: dataValues.nombres,
+                    apellidos: dataValues.apellidos,
+                    telefono: dataValues.telefono,
+                    dni: dataValues.dni,
+                    turno: nombre,
+                    superior: dataValues.superior,
+                };
+            })
+        );
 
         // Emitir las posiciones resueltas a través de Socket.IO
         io.emit("celpos", posiciones);
-        console.log("posiciones emitidas:", posiciones);
-
+        //console.log("posiciones emitidas:", posiciones);
         return posiciones;
 
     } catch (error) {

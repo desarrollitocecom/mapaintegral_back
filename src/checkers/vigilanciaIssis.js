@@ -206,19 +206,43 @@ const setUnidades = async () => {
                 const tipoIssi = element._tipounid;
 
                 // Actualizar el conteo basado en el estado de la unidad
-                switch (estado) {
+                /*switch (estado) {
                     case "NORMAL":
                     case "BATERIA BAJA":
+                        //console.log(estado);
                         conteo[tipoIssi].activo++;
                         break;
                     case "NO REPORTA - MAL APAGADO":
                     case "SIN COBERTURA DE GPS":
+                        //console.log("estado:",estado);
+                        //console.log("tipoissi:",tipoIssi);
+                        //console.log("conteo:",conteo[tipoIssi].inactivo," estado:",estado);
+                        //console.log("tipoIssi:",tipoIssi);
+                        conteo[tipoIssi].inactivo++;
+                        break;
+                    default:
+                        break;
+                }*/
+                switch (estado) {
+                    case "NORMAL":
+                    case "BATERIA BAJA":
+                        // Si no existe conteo para el tipoIssi, lo inicializamos
+                        if (!conteo[tipoIssi]) {
+                            conteo[tipoIssi] = { activo: 0, inactivo: 0 };
+                        }
+                        conteo[tipoIssi].activo++;
+                        break;
+                    case "NO REPORTA - MAL APAGADO":
+                    case "SIN COBERTURA DE GPS":
+                        // Si no existe conteo para el tipoIssi, lo inicializamos
+                        if (!conteo[tipoIssi]) {
+                            conteo[tipoIssi] = { activo: 0, inactivo: 0 };
+                        }
                         conteo[tipoIssi].inactivo++;
                         break;
                     default:
                         break;
                 }
-
                 // Verificar que los valores que se van a pasar a Redis no sean `undefined`
                 const unidadData = {
                     _issi: element._issi || "",

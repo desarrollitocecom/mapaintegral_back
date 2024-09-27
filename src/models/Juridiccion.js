@@ -1,8 +1,9 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require("../database");
 
-const Subsector = sequelize.define('Subsector', {
+const Juridiccion = sequelize.define('Juridiccion', {
     // Definición de los campos de la tabla
+
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,15 +17,11 @@ const Subsector = sequelize.define('Subsector', {
         type: DataTypes.JSONB,
         allowNull: false,
     },
-    sector:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    }
 
 }, {
     // Opciones del modelo
-    tableName: 'Subsectores',
+    tableName: 'Juridicciones',
     timestamps: true, // Añade campos `createdAt` y `updatedAt`
 });
 
-module.exports = Subsector;
+module.exports = Juridiccion;

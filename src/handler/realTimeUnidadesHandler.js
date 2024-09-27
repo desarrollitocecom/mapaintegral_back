@@ -60,10 +60,10 @@ const getRealTimeUnidadesHandler = async (req, res) => {
                             conteo[tipoIssi].activo++;
                             break;
                         case "NO REPORTA - MAL APAGADO":
-                            conteo[tipoIssi].inactivo++;
+                            //conteo[tipoIssi].inactivo++;
                             break;
                         case "SIN COBERTURA DE GPS":
-                            conteo[tipoIssi].inactivo++;
+                            //conteo[tipoIssi].inactivo++;
                             break;
                         default:
                             break;

@@ -42,7 +42,6 @@ const createUserHandler = async (req, res) => {
         console.error("Error al crear el usuario:", error);
         return res.status(500).json({ message: "Error al crear el usuario" });
     }
-
 };
 
 const getUserHandler = async (req, res) => {
@@ -58,7 +57,7 @@ const getUserHandler = async (req, res) => {
                 data: user
             });
         } else {
-            res.status(404).json({
+            res.status(200).json({
                 message: "Usuario no encontrado",
                 data: null
             });
@@ -80,7 +79,7 @@ const getAllUsersHandler = async (req, res) => {
                 data: users
             });
         } else {
-            res.status(404).json({
+            res.status(200).json({
                 message: "No se encontraron usuarios",
                 data: []
             });
@@ -180,4 +179,20 @@ const getAllPendingAprovalsHandler = async (req, res) => {
 
 };
 
-module.exports = { createUserHandler, getUserHandler, getAllUsersHandler, updateUserHandler, aproveUserHandler, getAllPendingAprovalsHandler }
+const deleteUserHandler = async (req, res) => {
+    const { member } = req.params;
+    if(!member)
+        return res.status(400).json({ message: "El campo member es obligatorio" });
+    try {
+    const response = await deleteUser(member);
+    if (response) {
+        return res.status(200).json({ message: "Usuario eliminado", data: response });
+    } else {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+    } catch (error) {
+
+    }
+};
+
+module.exports = { createUserHandler, getUserHandler, getAllUsersHandler, updateUserHandler, aproveUserHandler, getAllPendingAprovalsHandler, deleteUserHandler }

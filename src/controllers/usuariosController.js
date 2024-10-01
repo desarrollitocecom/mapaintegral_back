@@ -18,6 +18,7 @@ const getAllUsers = async () => {
 
     try {
         const response = await Usuario.findAll({
+            where: { state: true },
             include: [
                 {
                     model: Turno,
@@ -37,7 +38,7 @@ const getUser = async (id) => {
 
     if (id)
         try {
-            const response = await Usuario.findOne({ where: { member: id , state:true }, include: [{ model: Turno, as: 'TurnoAsociado', attributes: ['nombre'] }] });
+            const response = await Usuario.findOne({ where: { member: id, state: true }, include: [{ model: Turno, as: 'TurnoAsociado', attributes: ['nombre'] }] });
             return response || null;
         } catch (error) {
             console.error("Error al obtener el usuario:", id, error.message);

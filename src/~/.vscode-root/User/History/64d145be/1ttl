@@ -1,0 +1,24 @@
+///////////////////// ENDPOINTS DE DOLPHIN /////////////////////////////////////// 
+LOGIN_URL=http://190.102.145.248/phalconapidesa/loginsistema
+MENU_URL=http://190.102.145.248/phalconapidesa/loginmenu
+GPS_LISTAR_ESTADOS=http://190.102.145.248/phalconapidesa/gps_listar_estados
+LISTAR_TIPOS_UNIDADES=http://190.102.145.248/phalconapidesa/listar_tipos_unidades
+LISTAR_UNIDADES_GPS=http://190.102.145.248/phalconapidesa/gps_unidades
+//////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
+PORT=3001
+/// DATOS DE USUARIO DE DOLPHIN //////////
+USUARIO=USRSJLSNZGO24
+PASSWORD=sjlsnzgo24
+//////////////////////////////////////////
+USER2=usrsjl2021
+PASSWORD2=msjl2024
+//////////////////////////////////////
+DB_DATABASE=mapa_integral_vigilancia
+DB_HOST=localhost
+DB_USERNAME=postgres
+DB_PASSWORD=abc*2024$
+DB_PORT=5432
+////usrsjl2021
+///USRsjl2021

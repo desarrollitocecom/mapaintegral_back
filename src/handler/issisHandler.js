@@ -21,13 +21,13 @@ const addIssiHandler = async (req, res) => {
     // errors.push("no se detecto que options tenga propiedades figure o valor")
     if (errors.length > 0)
         return res.status(400).json({ error: errors.join(", ") });
-    console.log("options", options);
+    //console.log("options", options);
     try {
         const response = await addIssi(issi, latitud, longitud, punto_index, feature_index, options);
         if (response === 5)
-            return res.status(201).json({ meesage: `${issi} agregada satisfactoriamente` });
+            return res.status(201).json({ message: `${issi} agregada satisfactoriamente` });
         else if (response >= 0 && response < 4)
-            return res.status(200).json({ meesage: `${issi} actualizada satisfactoriamente` });
+            return res.status(200).json({ message: `${issi} actualizada satisfactoriamente` });
         else
             return res.status(400).json({ message: `Error al agregar la ISSI ${issi}`, status: response });
     } catch (error) {
@@ -76,7 +76,7 @@ const getPointInfoHandler = async (req, res) => {
         errors.push("options no es objecto o es un array, revisa el tipo de dato");
     if (errors.length > 0)
         return res.status(400).json({ error: errors.join(", ") });
-    console.log("options_api: ", options_api);
+    //console.log("options_api: ", options_api);
     try {
         if (!redisClient.isOpen)
             await redisClient.connect();
@@ -97,7 +97,7 @@ const getPointInfoHandler = async (req, res) => {
                     issisMatched.push(issi);
             }
         }
-        console.log("cantidad: ", issisMatched.length);
+        //console.log("cantidad: ", issisMatched.length);
         if (issisMatched.length > 0)
             return res.status(200).json(issisMatched);
         else

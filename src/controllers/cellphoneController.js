@@ -13,31 +13,31 @@ const getUbicacionesCel = async () => {
         if (telefonos.length === 0) {
             return [];
         }
-        
         // Usar Promise.all para resolver todas las promesas del map
         const posiciones = await Promise.all(
-            telefonos.map(async (telf, index) => {
+            telefonos.map(async (telf) => {
                 const posicion = await redisClient.geoPos("ubicaciones", telf);
                 const date = await redisClient.hGetAll(`ubicacion:${telf}`);
-                const { dataValues } = await getUser(telf);
-                const { TurnoAsociado: { nombre } } = dataValues;
+                const response = await getUser(telf);
+                // Si getUser no devuelve ningún registro, retornamos null
+                if (!response) return null;
+                // Si getUser devuelve un registro, retornamos los datos
                 return {
                     id: telf,
                     position: posicion,
                     date: date.timestamp,
-                    nombres: dataValues.nombres,
-                    apellidos: dataValues.apellidos,
-                    telefono: dataValues.telefono,
-                    dni: dataValues.dni,
-                    turno: nombre,
-                    superior: dataValues.superior,
+                    nombres: response.dataValues.nombres,
+                    apellidos: response.dataValues.apellidos,
+                    telefono: response.dataValues.telefono,
+                    dni: response.dataValues.dni,
+                    turno: response.dataValues.TurnoAsociado.nombre,
+                    superior: response.dataValues.superior,
                 };
             })
         );
-        // Emitir las posiciones resueltas a través de Socket.IO
-        //io.emit("celpos", posiciones);
-        //console.log("posiciones emitidas:", posiciones);
-        return posiciones;
+        // Filtrar los valores nulos antes de emitir
+        const posicionesFiltradas = posiciones.filter(posicion => posicion !== null);
+        return posicionesFiltradas;
     } catch (error) {
         console.error("Error obteniendo ubicaciones:", error);
         return null;

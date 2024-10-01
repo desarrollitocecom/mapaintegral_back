@@ -2,7 +2,6 @@ const Alerta = require("../models/Alerta");
 
 
 const createAlert = async (issi, tipo, point, position, information) => {
-
     try {
         const response = Alerta.create({
             issi: issi,
@@ -22,7 +21,6 @@ const createAlert = async (issi, tipo, point, position, information) => {
 };
 
 const getAlerts = async (issi) => {
-
     try {
         const response = await Alerta.findAll({
             where:
@@ -55,7 +53,6 @@ const getActiveAlert = async (issi) => {
 };
 
 const getAlert = async (id) => {
-
     try {
         const response = await Alerta.findOne({ where: { id: id } });
         if (response)
@@ -69,7 +66,6 @@ const getAlert = async (id) => {
 };
 
 const closeAlert = async (id) => {
-
     try {
         const response = await Alerta.findOne({ where: { id: id } });
         if (response) {
@@ -95,9 +91,6 @@ const deleteAlert = async (issi) => {
                 is_inside: false
             }
         });
-        console.log("encuentro:", responses.length, "registros");
-        console.log("ISSI:", issi);
-
         if (responses.length > 0) {
             // Itera sobre todas las alertas encontradas y actualiza el estado
             await Promise.all(

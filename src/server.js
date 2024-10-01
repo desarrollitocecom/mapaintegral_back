@@ -89,13 +89,11 @@ io.on('connection', async (socket) => {
     } catch (error) {
       console.error('Error al procesar la ubicación:', error);
     }
-
-
   });
 
   // Evento cuando el cliente se desconecta
   socket.on('disconnect', () => {
-    console.log('Cliente desconectado');
+   console.log('Cliente desconectado');
   });
 });
 

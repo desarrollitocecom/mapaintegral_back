@@ -4,6 +4,7 @@ const Turno = require("../models/Turno");
 
 const Usuario = sequelize.define('Usuario', {
     // Definición de los campos de la tabla
+    
     id: {
         type: DataTypes.UUID,
         primaryKey: true,
@@ -46,7 +47,7 @@ const Usuario = sequelize.define('Usuario', {
     state: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: true
+        defaultValue: false
     }
 
 }, {

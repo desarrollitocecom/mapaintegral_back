@@ -21,36 +21,9 @@ const checkIssiInArea = (position, center) => {
     return turf.booleanPointInPolygon(issiPoint, area);
 };
 
-/*const checkIfPointisInArea = (area, point, options = {}) => {
-
-    
-    // options.radio
-    // options.lado
-    // options.coordinadas: {
-    //     id : 
-    //}   //get them from DB with ID
-    const issiCoordinates = turf.point([roundTo(point.latitud, 12), roundTo(point.longitud, 12)]);
-    const BOUNDS_DISTANCE_METERS = options.lado; // 301 Distancia en metros en cada lado del cuadrado para vigilancia
-    const degreesOffset = metersToDegrees(BOUNDS_DISTANCE_METERS / 2);
-    const radio = options.radio;
-    let bounds = [];
-    switch (options.figure) {
-        case 0:
-            break;
-        case 1:
-            break;
-        case 2:
-            break;
-    }
-    const pointToCheck = turf.point(point);
-    return turf.booleanPointInPolygon(pointToCheck, area);
-}*/
 
 const drawArea = async (point, options) => {
 
-    // Opciones y cálculos basados en la figura geométrica
-    const BOUNDS_DISTANCE_METERS = 301; // Distancia predeterminada si no se proporciona
-    const degreesOffset = metersToDegrees(BOUNDS_DISTANCE_METERS / 2);
     const radio = 150 / 1000; // Convertimos metros a kilómetros para Turf.js
     let bounds = null;
     /// options.tipo: 0 = circulo  , 1 = cuadrado   , 2 = poligono

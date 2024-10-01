@@ -1,7 +1,7 @@
 const qs = require("qs");
 const cache = require("../cache");
 const { getRealTimeUnidades } = require("../controllers/realTimeUnidadesController");
-const { checkIssiInArea, checkIfPointisInArea } = require("./checkIssiInArea");
+const { checkIfPointisInArea } = require("./checkIssiInArea");
 const { getIssiInfo } = require("../controllers/IssisController");
 const redisClient = require("../redisClient");
 const { roundTo, fixArrayRedis } = require("../helpers/calcHelper");
@@ -42,7 +42,6 @@ const monitorIssis = async () => {
             const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
             const response = await getActiveAlert(issi);
             //console.log(isInside, issi);
-            // console.log("response: ",response);
             const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
             const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
             //console.log("pointinfo:", pointInfo);
@@ -110,61 +109,12 @@ const monitorIssis = async () => {
         }
     }
     const alertsList = await redisClient.lRange("alerts", 0, -1);
-    //console.log(alertsList);
     let alertsArray = alertsList
         .map(alert => JSON.parse(alert)).filter(alert => alert.isInside === false); // Filtra las alertas que no están dentro
-
     if (alertsArray.length === 0)
         alertsArray = [];
     io.emit('alerta', alertsArray);  // Emitir desde la caché
 };
-
-/*const monitorIssis = async () => {
-    if (!redisClient.isOpen) await redisClient.connect();
-    const issis = await redisClient.keys('vigilancia:*');
-    
-    if (issis.length > 0) {
-        for (const key of issis) {
-            const issi = key.split(':')[1];
-            const { point, position } = await getIssiInfo(issi);
-            const centerPoint = [roundTo(point.latitud), roundTo(point.longitud)];
-            const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
-            const response = await getActiveAlert(issi);
-            const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
-            const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
-            
-            if (!isInside && (!response || response.is_inside)) {
-                try {
-                    await deleteAlert(issiInfo.issi);
-                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${pointInfo.nombre}`);
-                    if (newAlert) {
-                        const alertObject = {
-                            issi, message: `ISSI ${issi} ha salido del área ${pointInfo ? pointInfo.nombre : ""}`,
-                            position, point: centerPoint, punto_index: issiInfo.punto_index, feature_index: issiInfo.feature_index,
-                            alertid: newAlert.id, isInside: false, options: JSON.parse(issiInfo.options)
-                        };
-                        await redisClient.rPush('alerts', JSON.stringify(alertObject));
-                        io.emit('alerta', fixArrayRedis(await redisClient.lRange("alerts", 0, -1)));
-                        return;
-                    }
-                } catch (error) { console.error(`Error al crear la alerta para ISSI ${issi}:`, error); }
-            } else if (isInside && response && !response.is_inside) {
-                try {
-                    await closeAlert(response.id);
-                    let alertsArray = (await redisClient.lRange("alerts", 0, -1)).map(alert => JSON.parse(alert)).map(alert =>
-                        alert.alertid === response.id ? { ...alert, isInside: true, message: `ISSI ${issi} ha regresado al área: ${pointInfo.nombre}` } : alert);
-                    await redisClient.del("alerts");
-                    for (const alert of alertsArray) await redisClient.rPush("alerts", JSON.stringify(alert));
-                    io.emit('alerta', alertsArray);
-                    return;
-                } catch (error) { console.error(`Error al cerrar la alerta para ISSI ${issi}:`, error); }
-            }
-        }
-    }
-    let alertsArray = (await redisClient.lRange("alerts", 0, -1)).map(alert => JSON.parse(alert)).filter(alert => !alert.isInside);
-    io.emit('alerta', alertsArray.length === 0 ? [] : alertsArray);
-};*/
-
 
 const setUnidades = async () => {
     let unidades = [];
@@ -187,7 +137,6 @@ const setUnidades = async () => {
         // Verificar si la consulta fue exitosa
         if (status === 200) {
             const issi_muni = await getRadios();  // Obtener información adicional de las radios
-
             // Inicializar el conteo
             const conteo = {
                 TODOS: { activo: 0, inactivo: 0 },
@@ -196,7 +145,8 @@ const setUnidades = async () => {
                 AUTOMOVIL: { activo: 0, inactivo: 0 },
                 MOTO: { activo: 0, inactivo: 0 },
                 POLICIA: { activo: 0, inactivo: 0 },
-                CAMION: { activo: 0, inactivo: 0 }
+                CAMION: { activo: 0, inactivo: 0 },
+                UNDEFINED: {conteo: 0, issi:[]}
             };
 
             // Iterar sobre las unidades obtenidas y guardarlas en Redis
@@ -204,39 +154,22 @@ const setUnidades = async () => {
                 const unidad = issi_muni.find(e => element._issi === e.issi);
                 const estado = element._estado;
                 const tipoIssi = element._tipounid;
-
-                // Actualizar el conteo basado en el estado de la unidad
-                /*switch (estado) {
-                    case "NORMAL":
-                    case "BATERIA BAJA":
-                        //console.log(estado);
-                        conteo[tipoIssi].activo++;
-                        break;
-                    case "NO REPORTA - MAL APAGADO":
-                    case "SIN COBERTURA DE GPS":
-                        //console.log("estado:",estado);
-                        //console.log("tipoissi:",tipoIssi);
-                        //console.log("conteo:",conteo[tipoIssi].inactivo," estado:",estado);
-                        //console.log("tipoIssi:",tipoIssi);
-                        conteo[tipoIssi].inactivo++;
-                        break;
-                    default:
-                        break;
-                }*/
                 switch (estado) {
                     case "NORMAL":
                     case "BATERIA BAJA":
-                        // Si no existe conteo para el tipoIssi, lo inicializamos
                         if (!conteo[tipoIssi]) {
-                            conteo[tipoIssi] = { activo: 0, inactivo: 0 };
+                            conteo.UNDEFINED.conteo++;
+                            conteo.UNDEFINED.issi.push(element._issi);
+                            break;
                         }
                         conteo[tipoIssi].activo++;
                         break;
                     case "NO REPORTA - MAL APAGADO":
                     case "SIN COBERTURA DE GPS":
-                        // Si no existe conteo para el tipoIssi, lo inicializamos
                         if (!conteo[tipoIssi]) {
-                            conteo[tipoIssi] = { activo: 0, inactivo: 0 };
+                            conteo.UNDEFINED.conteo++;
+                            conteo.UNDEFINED.issi.push(element._issi);
+                            break;
                         }
                         conteo[tipoIssi].inactivo++;
                         break;
@@ -264,9 +197,7 @@ const setUnidades = async () => {
                     _cargo: unidad ? unidad.informacion?.cargo : "-",
                     _nombre: unidad ? unidad.informacion?.nombre : "-"
                 };
-
                 unidades.push(unidadData);
-
                 await redisClient.hSet(`unidades:${unidadData._issi}`, {
                     latitud: unidadData._latitud,
                     longitud: unidadData._longitud
@@ -274,7 +205,7 @@ const setUnidades = async () => {
             }));
             io.emit('unidades', unidades);
             io.emit('conteo', conteo);
-
+            //console.log("undefined: ",conteo.UNDEFINED);
         } else {
             console.error("No se encontraron unidades disponibles o hubo un error en la API.");
         }

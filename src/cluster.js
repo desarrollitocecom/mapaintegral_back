@@ -8,6 +8,7 @@ const { setUnidades, monitorIssis } = require("./checkers/vigilanciaIssis");
 const { getUbicaciones } = require("./sockets/posiciones");
 const { socketServer } = require("./server");
 const cache = require("./cache");
+const redisClient = require("./redisClient");
 
 const { PORT } = process.env;
 
@@ -15,7 +16,6 @@ if (cluster.isPrimary) {
 
     login(); // logeas para levantar datos de sesion en caso no se haya llamado a unidades realtime antes de algun peticion que requiera sesion de inicio.
     console.log(`Master process ${process.pid} is running`);
-
     // Sincronización de la base de datos solo en el proceso master
     sequelize.sync({ alter: true })
         .then(() => {
@@ -27,12 +27,29 @@ if (cluster.isPrimary) {
         .catch(error => {
             console.error('Error en la sincronización de la base de datos: ', error);
         });
-
     // Manejar la salida de los workers
     cluster.on('exit', (worker, code, signal) => {
         console.log(`Worker ${worker.process.pid} died. Restarting...`);
         cluster.fork(); // Crear un nuevo worker si uno muere
     });
+
+    const assignIssisToWorkers = async () => {
+        if (!redisClient.isOpen) await redisClient.connect();
+    
+        const issis = await redisClient.keys('vigilancia:*');
+        const workers = Object.values(cluster.workers);
+        const numWorkers = workers.length;
+        const issisPerWorker = Math.ceil(issis.length / numWorkers);
+    
+        workers.forEach((worker, index) => {
+          const start = index * issisPerWorker;
+          const end = start + issisPerWorker;
+          const issisForWorker = issis.slice(start, end);
+          worker.send({ issis: issisForWorker });
+        });
+      };
+    assignIssisToWorkers();
+    setInterval(assignIssisToWorkers, 2000); // Actualizar asignaciones cada minuto (ajusta según tus necesidades)
 
     setInterval(setUnidades, 10000);
     setInterval(monitorIssis, 5000);

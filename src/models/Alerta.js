@@ -9,7 +9,7 @@ const Alerta = sequelize.define('Alerta', {
         defaultValue: DataTypes.UUIDV4,
     },
     issi: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     tipo: {

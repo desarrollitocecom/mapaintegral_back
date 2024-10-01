@@ -1,7 +1,7 @@
 // Esta función maneja toda la lógica de los sockets
 const socketHandler = (io) => {
     io.on('connection', async (socket) => {
-      console.log('Nuevo cliente conectado');
+      //console.log('Nuevo cliente conectado');
   
       // Emitir mensajes iniciales al cliente
       const alerts = fixArrayRedis(await getAlerts());
@@ -34,7 +34,7 @@ const socketHandler = (io) => {
       }, 5000);
   
       socket.on('disconnect', () => {
-        console.log('Cliente desconectado');
+        //console.log('Cliente desconectado');
         clearInterval(intervalId);
       });
     });

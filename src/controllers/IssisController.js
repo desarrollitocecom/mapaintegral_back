@@ -7,7 +7,13 @@ const getIssiInfo = async (id) => {
             await redisClient.connect();
         }
         const point = await redisClient.hGetAll(`vigilancia:${id}`);
+        if(id.length <= 5){
         const position = await redisClient.hGetAll(`unidades:${id}`);
+        return { point, position };
+        }
+        const punto = await redisClient.geoPos("ubicaciones",id);
+        // en turf funciona primero longitud y luego latitud al contrario de los mapas
+        const position = {longitud: punto[0].latitude, latitud: punto[0].longitude}
         return { point, position };
     } catch (error) {
         console.error(`"Error en getIssiInfo: "${error.message}`);
@@ -16,7 +22,7 @@ const getIssiInfo = async (id) => {
 }
 
 const addIssi = async (issi, latitud, longitud, punto_index, feature_index, options) => {
-    console.log("addIssi: ", issi, latitud, longitud, punto_index, feature_index, options);
+    //console.log("addIssi: ", issi, latitud, longitud, punto_index, feature_index, options);
     if (!redisClient.isOpen) {
         await redisClient.connect();
     }
@@ -70,9 +76,6 @@ const deleteIssiFromPoint = async (issi, alertid) => {
         await redisClient.connect();
     // Caso 1: Eliminar una ISSI específica si se proporciona
     if (issi) {
-        if ((!/^\d+$/.test(issi))) {
-            return null;
-        }
         try {
             const response = await redisClient.del(`vigilancia:${issi}`);
             const reponse = await deleteAlert(issi);
@@ -85,7 +88,6 @@ const deleteIssiFromPoint = async (issi, alertid) => {
             for (const alert of alertsArray) {
                 await redisClient.rPush("alerts", JSON.stringify(alert));
             }
-            //io.emit("alerta",alertsArray);
             return response > 0 ? response : null; // Retorna el número de eliminaciones o null si no se eliminó nada
         } catch (error) {
             console.error("Error al eliminar ISSI:", error);

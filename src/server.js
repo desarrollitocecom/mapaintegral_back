@@ -57,7 +57,7 @@ io.adapter(redisAdapter({ host: 'localhost', port: 6379 })); // para conectar a 
 
 // server.js
 io.on('connection', async (socket) => {
-  console.log('Nuevo cliente conectado');
+  //console.log('Nuevo cliente conectado');
 
   // Emitir mensajes iniciales al cliente
   const alerts = fixArrayRedis(await getAlerts());
@@ -85,7 +85,7 @@ io.on('connection', async (socket) => {
         timestamp: timestamp
       });
       
-      console.log(`Ubicación guardada para ${member}: (${latitude}, ${longitude}) a las ${timestamp}`);
+      //console.log(`Ubicación guardada para ${member}: (${latitude}, ${longitude}) a las ${timestamp}`);
     } catch (error) {
       console.error('Error al procesar la ubicación:', error);
     }
@@ -93,7 +93,7 @@ io.on('connection', async (socket) => {
 
   // Evento cuando el cliente se desconecta
   socket.on('disconnect', () => {
-   console.log('Cliente desconectado');
+   //console.log('Cliente desconectado');
   });
 });
 

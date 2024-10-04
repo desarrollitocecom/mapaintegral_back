@@ -19,7 +19,7 @@ redisClient.on('error', (err) => {
 });
 
 redisClient.on('end', () => {
-    console.log('Conexión con Redis cerrada');
+    //console.log('Conexión con Redis cerrada');
 });
 
 module.exports = redisClient;

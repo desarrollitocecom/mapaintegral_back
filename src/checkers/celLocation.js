@@ -22,7 +22,7 @@ const getTelefonosConUbicaciones = async () => {
             lng: posiciones[index] ? posiciones[index][0] : null  // Longitud
         }));
 
-        console.log(resultados);
+        //console.log(resultados);
         return resultados;
     } catch (error) {
         console.error("Error obteniendo teléfonos con ubicaciones:", error);

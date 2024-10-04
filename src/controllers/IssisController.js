@@ -35,7 +35,7 @@ const addIssi = async (issi, latitud, longitud, punto_index, feature_index, opti
             feature_index: feature_index,
             options: serializedOptions
         });
-        console.log("addIssi response: ", response);
+        //console.log("addIssi response: ", response);
         return response;
     } catch (error) {
         console.error(error);
@@ -57,7 +57,7 @@ const getPointInfo = async (latitud, longitud) => {
             if (latitude == latitud && longitude == longitud)
                 issisMatched.push(issi);
         }
-        console.log("MATCH: ", issisMatched);
+        //console.log("MATCH: ", issisMatched);
         if (issisMatched.length > 0)
             return issisMatched;
         else
@@ -102,7 +102,7 @@ const deleteIssiFromPoint = async (issi, alertid) => {
                 const response = await redisClient.del(keys);
                 for (const key of keys) {
                     const issi = key.split(":")[1];
-                    console.log(issi);
+                    //console.log(issi);
                     await deleteAlert(issi);
                     await redisClient.del(`vigilancia:${issi}`);
                 }

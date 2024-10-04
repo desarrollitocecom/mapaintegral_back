@@ -52,7 +52,7 @@ const monitorIssis = async () => {
                     // Crear una nueva alerta
                     const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${pointInfo.nombre}`);
                     if (newAlert) {
-                        console.log(`Alerta creada para ISSI ${issi}:`);
+                       //console.log(`Alerta creada para ISSI ${issi}:`);
                         // Crear objeto de alerta para emitir a través de Socket.IO
                         const alertObject = {
                             issi,
@@ -83,7 +83,7 @@ const monitorIssis = async () => {
                 try {
                     // Cerrar la alerta
                     const a = await closeAlert(response.id);
-                    console.log(`Alerta cerrada para ISSI ${response.issi}:`);
+                    //console.log(`Alerta cerrada para ISSI ${response.issi}:`);
                     let alertsList = await redisClient.lRange("alerts", 0, -1);
                     let alertsArray = alertsList.map(alert => JSON.parse(alert));
                     const alertIdToRemove = response.id;

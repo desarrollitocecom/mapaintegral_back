@@ -50,7 +50,7 @@ const monitorIssis = async () => {
                 try {
                     await deleteAlert(issiInfo.issi)
                     // Crear una nueva alerta
-                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${pointInfo.nombre}`);
+                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${pointInfo ? pointInfo.nombre : ""}`);
                     if (newAlert) {
                        //console.log(`Alerta creada para ISSI ${issi}:`);
                         // Crear objeto de alerta para emitir a través de Socket.IO

@@ -1,6 +1,5 @@
 const { createUser, getAllUsers, getUser, deleteUser, updateUser, aproveUser, getAllPendingAprovals } = require("../controllers/usuariosController");
 const { esAlfabetica } = require("../helpers/regex");
-const Usuario = require("../models/Usuario");
 
 const createUserHandler = async (req, res) => {
 
@@ -191,7 +190,8 @@ const deleteUserHandler = async (req, res) => {
             return res.status(404).json({ message: "Usuario no encontrado" });
         }
     } catch (error) {
-
+        console.error("error en deleteUserHandler :", error.message);
+        return res.status(500).json({ message: "deleteUserHandler: Error al obtener el usuario :", error: error.message });
     }
 };
 

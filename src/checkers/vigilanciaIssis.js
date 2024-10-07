@@ -41,22 +41,23 @@ const monitorIssis = async () => {
             //const isInside = checkIssiInArea(position, centerPoint);
             const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
             const response = await getActiveAlert(issi);
-            //console.log(isInside, issi);
+            console.log("estan dentro: ", isInside, issi);
             const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
-            const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
+            //console.log("nombre del punto: ",JSON.parse(issiInfo.options).nombre);
+            //const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
             //console.log("pointinfo:", pointInfo);
             // Caso 1: ISSI fuera del área y no tiene alerta
             if (isInside === false && (response === null || (response && response.is_inside === true))) {
                 try {
                     await deleteAlert(issiInfo.issi)
                     // Crear una nueva alerta
-                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${pointInfo ? pointInfo.nombre : ""}`);
+                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${JSON.parse(issiInfo.options).nombre} `);
                     if (newAlert) {
-                       //console.log(`Alerta creada para ISSI ${issi}:`);
+                        //console.log(`Alerta creada para ISSI ${issi}:`);
                         // Crear objeto de alerta para emitir a través de Socket.IO
                         const alertObject = {
                             issi,
-                            message: `ISSI ${issi} ha salido del área ${pointInfo !== false ? pointInfo.nombre : ""}`,
+                            message: `ISSI ${issi} ha salido del área ${JSON.parse(issiInfo.options).nombre}`,
                             position, // Posición actual de la ISSI
                             point: centerPoint, // Centro del área vigilada
                             punto_index: issiInfo.punto_index,
@@ -92,7 +93,7 @@ const monitorIssis = async () => {
                             return {
                                 ...alert,
                                 isInside: true,
-                                message: `ISSI ${issi} ha regresado al área : ${pointInfo.nombre}`
+                                message: `ISSI ${issi} ha regresado al área : ${JSON.parse(issiInfo.options).nombre}`
                             }
                         return alert;
                     });
@@ -146,7 +147,7 @@ const setUnidades = async () => {
                 MOTO: { activo: 0, inactivo: 0 },
                 POLICIA: { activo: 0, inactivo: 0 },
                 CAMION: { activo: 0, inactivo: 0 },
-                UNDEFINED: {conteo: 0, issi:[]}
+                UNDEFINED: { conteo: 0, issi: [] }
             };
 
             // Iterar sobre las unidades obtenidas y guardarlas en Redis

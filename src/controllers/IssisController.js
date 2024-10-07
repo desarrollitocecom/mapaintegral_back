@@ -7,13 +7,13 @@ const getIssiInfo = async (id) => {
             await redisClient.connect();
         }
         const point = await redisClient.hGetAll(`vigilancia:${id}`);
-        if(id.length <= 5){
-        const position = await redisClient.hGetAll(`unidades:${id}`);
-        return { point, position };
+        if (id.length <= 5) { // si el id es menor o igual a 5 es una ISSI de radio, de lo contrario un member de celular
+            const position = await redisClient.hGetAll(`unidades:${id}`);
+            return { point, position };
         }
-        const punto = await redisClient.geoPos("ubicaciones",id);
+        const punto = await redisClient.geoPos("ubicaciones", id);
         // en turf funciona primero longitud y luego latitud al contrario de los mapas
-        const position = {longitud: punto[0].latitude, latitud: punto[0].longitude}
+        const position = { longitud: punto[0].latitude, latitud: punto[0].longitude }
         return { point, position };
     } catch (error) {
         console.error(`"Error en getIssiInfo: "${error.message}`);

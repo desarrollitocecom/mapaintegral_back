@@ -153,7 +153,7 @@ const aproveUserHandler = async (req, res) => {
                 data: member
             });
         } else {
-            res.status(404).json({
+            res.status(200).json({
                 message: "Usuario no encontrado",
                 data: member
             });
@@ -171,7 +171,7 @@ const getAllPendingAprovalsHandler = async (req, res) => {
         if (response.length > 0)
             return res.status(200).json({ message: "Usuarios pendientes de aprobación", data: response });
         else
-            return res.status(404).json({ message: "No hay usuarios pendientes de aprobación", data: response });
+            return res.status(200).json({ message: "No hay usuarios pendientes de aprobación", data: [] });
     } catch (error) {
         console.error("Error al obtener los usuarios pendientes de aprobación:", error);
         return res.status(500).json({ message: "Error al obtener los usuarios pendientes de aprobación", error: error.message });
@@ -181,15 +181,15 @@ const getAllPendingAprovalsHandler = async (req, res) => {
 
 const deleteUserHandler = async (req, res) => {
     const { member } = req.params;
-    if(!member)
+    if (!member)
         return res.status(400).json({ message: "El campo member es obligatorio" });
     try {
-    const response = await deleteUser(member);
-    if (response) {
-        return res.status(200).json({ message: "Usuario eliminado", data: response });
-    } else {
-        return res.status(404).json({ message: "Usuario no encontrado" });
-    }
+        const response = await deleteUser(member);
+        if (response) {
+            return res.status(200).json({ message: "Usuario eliminado", data: response });
+        } else {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
     } catch (error) {
 
     }

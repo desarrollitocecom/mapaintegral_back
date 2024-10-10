@@ -92,7 +92,7 @@ const getRealTimeUnidadesHandler = async (req, res) => {
                 return res.status(200).json({ result, conteo });
             }
             else
-                return res.status(200).json({ message: "No se encontraron unidades disponibles revisa los datos del login", result: [], conteo: {}});
+                return res.status(200).json({ message: "No se encontraron unidades disponibles revisa los datos del login"});
         }
     } catch (error) {
         console.error("error en Real Time Unidades :", error.message);

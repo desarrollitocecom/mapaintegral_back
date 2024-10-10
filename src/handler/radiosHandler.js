@@ -5,7 +5,7 @@ const getRadiosHandler = async (req, res) => {
     try {
         const response = await getRadios();
         if (!response.length) {
-            return res.status(200).json({ message: "No se encontraron radios" });
+            return res.status(200).json(response);
         }
         return res.status(200).json(response);
     } catch (error) {

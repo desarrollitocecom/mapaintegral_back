@@ -8,9 +8,10 @@ const getAllPuntosImportantesHandler = async (req, res) => {
 
         // Si no se encontraron puntos, responde con un mensaje adecuado
         if (puntos.length === 0) {
-            return res.status(404).json({
+            return res.status(200).json({
                 success: false,
-                message: "No se encontraron puntos importantes."
+                message: "No se encontraron puntos importantes.",
+                data: puntos
             });
         }
 
@@ -40,9 +41,10 @@ const getPuntoImportanteByIdHandler = async (req, res) => {
 
         // Si no se encuentra el punto, responde con un código 404
         if (!punto) {
-            return res.status(404).json({
+            return res.status(200).json({
                 success: false,
-                message: `Punto importante con ID ${id} no encontrado.`
+                message: `Punto importante con ID ${id} no encontrado.`,
+                data: punto
             });
         }
 

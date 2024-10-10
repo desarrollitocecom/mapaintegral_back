@@ -20,7 +20,7 @@ const getPuntoTacticoByIdHandler = async (req, res) => {
     try {
         const response = await getPuntoTacticoById(id);
         if (!response) {
-            return res.status(404).send({ message: `No se encontró el punto táctico con ID ${id}` });
+            return res.status(200).json({ message: `No se encontró el punto táctico con ID ${id}` });
         }
         return res.status(200).json(response);
     } catch (error) {

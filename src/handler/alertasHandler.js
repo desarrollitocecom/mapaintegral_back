@@ -42,7 +42,7 @@ const getAlertsHandler = async (req, res) => {
         if (response.length > 0) {
             return res.status(200).json(response);
         } else {
-            return res.status(404).json({ message: "No se encontraron alertas para el ISSI proporcionado" });
+            return res.status(200).json({ message: "No se encontraron alertas para el ISSI proporcionado", response });
         }
     } catch (error) {
         console.error(error);
@@ -59,7 +59,7 @@ const getAlertHandler = async (req, res) => {
         if (response) {
             return res.status(200).json(response);
         } else {
-            return res.status(404).json({ message: "Alerta no encontrada" });
+            return res.status(200).json({ message: "Alerta no encontrada", response });
         }
     } catch (error) {
         console.error(error);
@@ -76,7 +76,7 @@ const closeAlertHandler = async (req, res) => {
         if (response) {
             return res.status(200).json({ message: "Alerta cerrada correctamente" });
         } else {
-            return res.status(404).json({ message: "Alerta no encontrada o no se pudo cerrar" });
+            return res.status(400).json({ message: "Alerta no encontrada o no se pudo cerrar" });
         }
     } catch (error) {
         console.error('Error al cerrar la alerta:', error);

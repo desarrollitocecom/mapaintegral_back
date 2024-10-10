@@ -5,12 +5,12 @@ const getRadiosHandler = async (req, res) => {
     try {
         const response = await getRadios();
         if (!response.length) {
-            return res.status(204).send({ message: "No se encontraron radios" });
+            return res.status(200).json({ message: "No se encontraron radios" });
         }
-        return res.status(200).send(response);
+        return res.status(200).json(response);
     } catch (error) {
         console.error("Error al obtener detalle de radios:", error.message);
-        return res.status(500).send({ message: "Error al obtener detalle de radios" });
+        return res.status(500).json({ message: "Error al obtener detalle de radios" });
     }
 };
 
@@ -20,12 +20,12 @@ const getRadioHandler = async (req, res) => {
     try {
         const response = await getRadio(issi);
         if (!response) {
-            return res.status(204).send({ message: `No se encontró la radio con ISSI ${issi}` });
+            return res.status(204).json({ message: `No se encontró la radio con ISSI ${issi}` });
         }
-        return res.status(200).send(response);
+        return res.status(200).json(response);
     } catch (error) {
         console.error(`Error al obtener la radio con ISSI ${issi}:`, error.message);
-        return res.status(500).send({ message: "Error al obtener la radio" });
+        return res.status(500).json({ message: "Error al obtener la radio" });
     }
 };
 
@@ -53,7 +53,7 @@ const createRadioHandler = async (req, res) => {
         return res.status(201).send(response);
     } catch (error) {
         console.error("Error al crear la radio:", error.message);
-        return res.status(500).send({ message: "Error al crear la radio" });
+        return res.status(500).json({ message: "Error al crear la radio" });
     }
 };
 
@@ -64,12 +64,12 @@ const updateRadioHandler = async (req, res) => {
     try {
         const response = await updateRadio(issi, radioData);
         if (!response) {
-            return res.status(204).send({ message: `No se encontró la radio con ISSI ${issi}` });
+            return res.status(204).json({ message: `No se encontró la radio con ISSI ${issi}` });
         }
-        return res.status(200).send(response);
+        return res.status(200).json(response);
     } catch (error) {
         console.error(`Error al actualizar la radio con ISSI ${issi}:`, error.message);
-        return res.status(500).send({ message: "Error al actualizar la radio" });
+        return res.status(500).json({ message: "Error al actualizar la radio" });
     }
 };
 
@@ -83,10 +83,10 @@ const deleteRadioHandler = async (req, res) => {
         if (!response) {
             return res.status(204).json({ message: `No se encontró la radio con ISSI ${issi}` });
         }
-        return res.status(200).send({ message: `Radio con ISSI ${issi} eliminada correctamente` });
+        return res.status(200).json({ message: `Radio con ISSI ${issi} eliminada correctamente` });
     } catch (error) {
         console.error(`Error al eliminar la radio con ISSI ${issi}:`, error.message);
-        return res.status(500).send({ message: "Error al eliminar la radio" });
+        return res.status(500).json({ message: "Error al eliminar la radio" });
     }
 };
 

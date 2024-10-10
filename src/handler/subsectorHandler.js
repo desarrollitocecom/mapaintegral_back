@@ -5,9 +5,10 @@ const getAllSubsectoresHandler = async (req, res) => {
     try {
         const subsectores = await getAllSubsectores();
         if (subsectores.length === 0) {
-            return res.status(404).json({
+            return res.status(200).json({
                 success: false,
-                message: "No se encontraron subsectores."
+                message: "No se encontraron subsectores.",
+                data: subsectores
             });
         }
         return res.status(200).json({
@@ -44,9 +45,10 @@ const getSubsectorByIdHandler = async (req, res) => {
         const subsector = await getSubsectorById(id);
 
         if (!subsector) {
-            return res.status(404).json({
+            return res.status(200).json({
                 success: false,
-                message: `Subsector con ID ${id} no encontrado.`
+                message: `Subsector con ID ${id} no encontrado.`,
+                data: subsector
             });
         }
 

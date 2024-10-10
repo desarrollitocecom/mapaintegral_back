@@ -58,7 +58,7 @@ const getUserHandler = async (req, res) => {
         } else {
             res.status(200).json({
                 message: "Usuario no encontrado",
-                data: null
+                data: user
             });
         }
 
@@ -80,7 +80,7 @@ const getAllUsersHandler = async (req, res) => {
         } else {
             res.status(200).json({
                 message: "No se encontraron usuarios",
-                data: []
+                data: users
             });
         }
 
@@ -170,7 +170,7 @@ const getAllPendingAprovalsHandler = async (req, res) => {
         if (response.length > 0)
             return res.status(200).json({ message: "Usuarios pendientes de aprobación", data: response });
         else
-            return res.status(200).json({ message: "No hay usuarios pendientes de aprobación", data: [] });
+            return res.status(200).json({ message: "No hay usuarios pendientes de aprobación", data: response });
     } catch (error) {
         console.error("Error al obtener los usuarios pendientes de aprobación:", error);
         return res.status(500).json({ message: "Error al obtener los usuarios pendientes de aprobación", error: error.message });
@@ -187,7 +187,7 @@ const deleteUserHandler = async (req, res) => {
         if (response) {
             return res.status(200).json({ message: "Usuario eliminado", data: response });
         } else {
-            return res.status(404).json({ message: "Usuario no encontrado" });
+            return res.status(200).json({ message: "Usuario no encontrado", data: response });
         }
     } catch (error) {
         console.error("error en deleteUserHandler :", error.message);

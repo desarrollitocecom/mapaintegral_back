@@ -2,10 +2,12 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-
+.vscode-root/*
+~/*
 # Environment variables
 .env
 .env.test
+.env.local
 Wireshark - Acceso directo.lnk
 # Logs
 logs/

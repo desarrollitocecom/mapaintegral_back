@@ -10,7 +10,7 @@ const { socketServer } = require("./server");
 const cache = require("./cache");
 const redisClient = require("./redisClient");
 
-const { PORT } = process.env;
+const { PORT_SERENAZGO } = process.env;
 
 if (cluster.isPrimary) {
 
@@ -35,32 +35,52 @@ if (cluster.isPrimary) {
 
     const assignIssisToWorkers = async () => {
         if (!redisClient.isOpen) await redisClient.connect();
-    
+
         const issis = await redisClient.keys('vigilancia:*');
         const workers = Object.values(cluster.workers);
         const numWorkers = workers.length;
         const issisPerWorker = Math.ceil(issis.length / numWorkers);
-    
+
         workers.forEach((worker, index) => {
-          const start = index * issisPerWorker;
-          const end = start + issisPerWorker;
-          const issisForWorker = issis.slice(start, end);
-          worker.send({ issis: issisForWorker });
+            const start = index * issisPerWorker;
+            const end = start + issisPerWorker;
+            const issisForWorker = issis.slice(start, end);
+            worker.send({ issis: issisForWorker });
         });
-      };
+    };
     assignIssisToWorkers();
     setInterval(assignIssisToWorkers, 2000); // Actualizar asignaciones cada minuto (ajusta según tus necesidades)
 
     setInterval(setUnidades, 10000);
-    setInterval(monitorIssis, 5000);
     setInterval(getUbicaciones, 15000);
 } else {
     console.log(`Worker process ${process.pid} started`);
-    socketServer.listen(PORT, async () => {
+
+    // Inicializar Redis en el worker
+    const { createClient } = require('redis');
+    const redisClient = createClient();
+
+    redisClient.connect().then(() => {
+        console.log('Redis_SERENAZGO: client connected in worker');
+    }).catch((err) => {
+        console.error('Error connecting Redis in worker:', err);
+    });
+
+    let assignedIssis = []; // Variable para almacenar las ISSIs asignadas
+
+    process.on('message', (msg) => {
+        if (msg.issis) {
+            assignedIssis = msg.issis;
+        }
+    });
+
+    setInterval(monitorIssis, 5000);
+
+    socketServer.listen(PORT_SERENAZGO, async () => {
         try {
             const log = await login();
             if (log)
-                console.log(`Servidor corriendo en el puerto ${PORT} & logeado correctamente con ${cache.get("sesion")._empresa}`);
+                console.log(`SERENAZGO: Servidor corriendo en el puerto ${PORT_SERENAZGO} & logeado correctamente con ${cache.get("sesion")._empresa}`);
             else
                 console.error("Error en el inicio de sesión en Dolphin, verifica las credenciales de inicio o el endpoint - fallo en el server");
         } catch (error) {

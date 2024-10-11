@@ -8,7 +8,6 @@ const { roundTo, fixArrayRedis } = require("../helpers/calcHelper");
 const { io } = require("../server");
 const { getRadios } = require("../controllers/radiosController");
 const { createAlert, closeAlert, getActiveAlert } = require("../controllers/alertasController");
-const { getPuntoTacticoById } = require("../controllers/puntosTacticosController");
 
 const deleteAlert = async (issi) => {
 
@@ -41,11 +40,9 @@ const monitorIssis = async () => {
             //const isInside = checkIssiInArea(position, centerPoint);
             const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
             const response = await getActiveAlert(issi);
-            console.log("estan dentro: ", isInside, issi);
+            //console.log("estan dentro: ", isInside, issi);
             const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
             //console.log("nombre del punto: ",JSON.parse(issiInfo.options).nombre);
-            //const pointInfo = issiInfo.punto_index ? await getPuntoTacticoById(issiInfo.punto_index) : false;
-            //console.log("pointinfo:", pointInfo);
             // Caso 1: ISSI fuera del área y no tiene alerta
             if (isInside === false && (response === null || (response && response.is_inside === true))) {
                 try {
@@ -68,6 +65,7 @@ const monitorIssis = async () => {
                         };
                         // Añadir la alerta al array
                         // Recuperar el array de alertas del caché
+                        //console.log("alertas:",alertObject);
                         await redisClient.rPush('alerts', JSON.stringify(alertObject));
                         const a = await redisClient.lRange("alerts", 0, -1);
                         const b = fixArrayRedis(a);

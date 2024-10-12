@@ -17,7 +17,7 @@ const createAlertHandler = async (req, res) => {
     if (errors.length > 0)
         return res.status(400).json({ message: "Error al crear la alerta", errors: errors });
 
-    console.log( issi, tipo, point, position, information);
+    //console.log( issi, tipo, point, position, information);
     try {
         const response = await createAlert(issi, tipo, point, position, information);
         if (response) {

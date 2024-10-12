@@ -13,8 +13,77 @@ const redisClient = require("./redisClient");
 const { PORT_SERENAZGO } = process.env;
 
 if (cluster.isPrimary) {
-
     login(); // logeas para levantar datos de sesion en caso no se haya llamado a unidades realtime antes de algun peticion que requiera sesion de inicio.
+    // Inicializar Redis para el proceso master
+    const { io } = require('./server');
+
+    const { createClient } = require('redis');
+    const redisSubscriber = createClient();
+    (async () => {
+        try {
+            await redisSubscriber.connect();
+
+            const alerts = new Map();
+
+            await redisSubscriber.subscribe('alerts_channel', (message) => {
+                const alert = JSON.parse(message);
+                //console.log("alert:", alert);
+                //console.log("se supone que envie alerta");
+                if (alert.action === "deleteAll") {
+                    alerts.clear();
+                    io.emit('alerta', []);
+                    return;
+                }
+
+                if (alert.action === "delete") {
+                    //console.log(alert);
+                    const ex = alerts.delete(alert.issi)
+                    //console.log("delete:", ex);
+                    const alertsArray = Array.from(alerts.values());
+                    //console.log(alertsArray);
+                    io.emit('alerta', alertsArray);
+                    return;
+                }
+
+                if (alert.isInside === false) {
+                    // Añadir o actualizar la alerta en el mapa
+                    alerts.set(alert.issi, alert);
+                } else if (alert.isInside === true) {
+                    // Actualizar la propiedad isInside de la alerta existente
+                    if (alerts.has(alert.issi)) {
+                        const existingAlert = alerts.get(alert.issi);
+                        existingAlert.isInside = alert.isInside;
+                        existingAlert.message = alert.message;
+                    } else {
+                        // Si por alguna razón la alerta no existe, la añadimos
+                        alerts.set(alert.issi, alert);
+                    }
+                }
+
+                // Emitir las alertas actualizadas a los clientes
+                const alertsArray = Array.from(alerts.values());
+                //console.log("alertas channel: ",alertsArray.length);
+                io.emit('alerta', alertsArray);
+            });
+
+            // Intervalo para limpiar alertas con isInside: true
+            setInterval(() => {
+                for (const [issi, alert] of alerts.entries()) {
+                    //console.log("alert.isInside",alert.isInside);
+                    if (alert.isInside === true) {
+                        alerts.delete(issi);
+                    }
+                }
+                const alertsArray = Array.from(alerts.values());
+                //console.log("borra alertas: ",alertsArray.length);
+                io.emit('alerta', alertsArray);
+            }, 10000); // Ajusta el intervalo según tus necesidades
+
+        } catch (error) {
+            console.error('Error en la configuración de Redis Subscriber:', error);
+        }
+    })();
+
     console.log(`Master process ${process.pid} is running`);
     // Sincronización de la base de datos solo en el proceso master
     sequelize.sync({ alter: true })
@@ -34,9 +103,11 @@ if (cluster.isPrimary) {
     });
 
     const assignIssisToWorkers = async () => {
+
         if (!redisClient.isOpen) await redisClient.connect();
 
         const issis = await redisClient.keys('vigilancia:*');
+        if (issis.length === 0) return;
         const workers = Object.values(cluster.workers);
         const numWorkers = workers.length;
         const issisPerWorker = Math.ceil(issis.length / numWorkers);
@@ -46,11 +117,12 @@ if (cluster.isPrimary) {
             const end = start + issisPerWorker;
             const issisForWorker = issis.slice(start, end);
             worker.send({ issis: issisForWorker });
+            //issisForWorker.length > 0 ? console.log(`Worker ${index} ${worker.process.pid} assigned ${issisForWorker.join(",")} `) : "";
+
         });
     };
     assignIssisToWorkers();
-    setInterval(assignIssisToWorkers, 2000); // Actualizar asignaciones cada minuto (ajusta según tus necesidades)
-
+    setInterval(assignIssisToWorkers, 8000); // Actualizar asignaciones cada minuto (ajusta según tus necesidades)
     setInterval(setUnidades, 10000);
     setInterval(getUbicaciones, 15000);
 } else {
@@ -74,7 +146,7 @@ if (cluster.isPrimary) {
         }
     });
 
-    setInterval(monitorIssis, 5000);
+    setInterval(() => monitorIssis(assignedIssis), 10000);
 
     socketServer.listen(PORT_SERENAZGO, async () => {
         try {

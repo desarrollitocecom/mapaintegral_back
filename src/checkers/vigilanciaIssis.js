@@ -24,95 +24,111 @@ const deleteAlert = async (issi) => {
     }
 };
 
-const monitorIssis = async () => {
+const monitorIssis = async (issis) => {
+
+    if (issis.length === 0) return;
 
     if (!redisClient.isOpen) {
         await redisClient.connect();
     }
     // Obtener las ISSIs activas para vigilar
-    const issis = await redisClient.keys('vigilancia:*');
+    //const issis = await redisClient.keys('vigilancia:*');
+    //console.log("ISSIS vigilando:",issis.join(", "));
 
-    if (issis.length > 0) {
-        for (const key of issis) {
-            const issi = key.split(':')[1]; // obtener la ISSI actual
-            const { point, position } = await getIssiInfo(issi); // obtener la ubicación y el punto a vigilar de la ISSI
-            const centerPoint = [roundTo(point.latitud), roundTo(point.longitud)];
-            //const isInside = checkIssiInArea(position, centerPoint);
-            const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
-            const response = await getActiveAlert(issi);
-            //console.log("estan dentro: ", isInside, issi);
-            const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
-            //console.log("nombre del punto: ",JSON.parse(issiInfo.options).nombre);
-            // Caso 1: ISSI fuera del área y no tiene alerta
-            if (isInside === false && (response === null || (response && response.is_inside === true))) {
-                try {
-                    await deleteAlert(issiInfo.issi)
-                    // Crear una nueva alerta
-                    const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${JSON.parse(issiInfo.options).nombre} `);
-                    if (newAlert) {
-                        //console.log(`Alerta creada para ISSI ${issi}:`);
-                        // Crear objeto de alerta para emitir a través de Socket.IO
-                        const alertObject = {
-                            issi,
-                            message: `ISSI ${issi} ha salido del área ${JSON.parse(issiInfo.options).nombre}`,
-                            position, // Posición actual de la ISSI
-                            point: centerPoint, // Centro del área vigilada
-                            punto_index: issiInfo.punto_index,
-                            feature_index: issiInfo.feature_index,
-                            alertid: newAlert.id, // ID de la alerta recién creada
-                            isInside: false,
-                            options: JSON.parse(issiInfo.options)
-                        };
-                        // Añadir la alerta al array
-                        // Recuperar el array de alertas del caché
-                        //console.log("alertas:",alertObject);
-                        await redisClient.rPush('alerts', JSON.stringify(alertObject));
-                        const a = await redisClient.lRange("alerts", 0, -1);
-                        const b = fixArrayRedis(a);
-                        io.emit('alerta', b);  // Emitir desde la caché
-                        return;
-                    }
-                } catch (error) {
-                    console.error(`Error al crear la alerta para ISSI ${issi}:`, error);
-                }
-
-                // Caso 2: ISSI ha entrado en el área vigilada y tiene una alerta activa
-            } else if (isInside === true && response && response.is_inside === false) {
-
-                try {
-                    // Cerrar la alerta
-                    const a = await closeAlert(response.id);
-                    //console.log(`Alerta cerrada para ISSI ${response.issi}:`);
-                    let alertsList = await redisClient.lRange("alerts", 0, -1);
-                    let alertsArray = alertsList.map(alert => JSON.parse(alert));
-                    const alertIdToRemove = response.id;
-                    alertsArray = alertsArray.map(alert => {
-                        if (alert.alertid === alertIdToRemove)
-                            return {
-                                ...alert,
-                                isInside: true,
-                                message: `ISSI ${issi} ha regresado al área : ${JSON.parse(issiInfo.options).nombre}`
-                            }
-                        return alert;
-                    });
-                    await redisClient.del("alerts");
-                    for (const alert of alertsArray) {
-                        await redisClient.rPush("alerts", JSON.stringify(alert));
-                    }
-                    io.emit('alerta', alertsArray);  // Emitir desde la caché
+    for (const key of issis) {
+        const issi = key.split(':')[1]; // obtener la ISSI actual
+        const { point, position } = await getIssiInfo(issi); // obtener la ubicación y el punto a vigilar de la ISSI
+        const centerPoint = [roundTo(point.latitud), roundTo(point.longitud)];
+        const isInside = await checkIfPointisInArea(position, centerPoint, point.options);
+        const response = await getActiveAlert(issi);
+        //console.log("estan dentro: ", isInside, issi);
+        const issiInfo = await redisClient.hGetAll(`vigilancia:${issi}`);
+        //console.log("nombre del punto: ",JSON.parse(issiInfo.options).nombre);
+        // Caso 1: ISSI fuera del área y no tiene alerta
+        if (isInside === false && (response === null || (response && response.is_inside === true))) {
+            try {
+                await deleteAlert(issiInfo.issi)
+                // Crear una nueva alerta
+                const newAlert = await createAlert(issi, 1, point, position, `ISSI ${issi} ha salido del área: ${JSON.parse(issiInfo.options).nombre} `);
+                if (newAlert) {
+                    //console.log(`Alerta creada para ISSI ${issi}:`);
+                    // Crear objeto de alerta para emitir a través de Socket.IO
+                    const alertObject = {
+                        issi,
+                        message: `ISSI ${issi} ha salido del área ${JSON.parse(issiInfo.options).nombre}`,
+                        position, // Posición actual de la ISSI
+                        point: centerPoint, // Centro del área vigilada
+                        alertid: newAlert.id, // ID de la alerta recién creada
+                        isInside: false,
+                        options: JSON.parse(issiInfo.options)
+                    };
+                    // Añadir la alerta al array
+                    // Recuperar el array de alertas del caché
+                    //console.log("alertas:",alertObject);
+                    // await redisClient.rPush('alerts', JSON.stringify(alertObject));
+                    // const a = await redisClient.lRange("alerts", 0, -1);
+                    // const b = fixArrayRedis(a);
+                    // io.emit('alerta', b);  // Emitir desde la caché
+                    // Publicar la alerta en el canal de Redis
+                    //console.log("voy a enviar la alerta", alertObject);
+                    // En monitorIssis.js, después de publicar una alerta
+                    //console.log(`Worker ${process.pid} publicó una alerta con ISSI:`, alertObject.issi);
+                    await redisClient.publish('alerts_channel', JSON.stringify(alertObject));
                     return;
-                } catch (error) {
-                    console.error(`Error al cerrar la alerta para ISSI ${issi}:`, error);
                 }
+            } catch (error) {
+                console.error(`Error al crear la alerta para ISSI ${issi}:`, error);
+            }
+
+            // Caso 2: ISSI ha entrado en el área vigilada y tiene una alerta activa
+        } else if (isInside === true && response && response.is_inside === false) {
+
+            try {
+                // Cerrar la alerta
+                await closeAlert(response.id);
+                //console.log(`Alerta cerrada para ISSI ${response.issi}:`);
+                const alertObject = {
+                    issi,
+                    message: `ISSI ${issi} ha regresado al área: ${JSON.parse(issiInfo.options).nombre}`,
+                    //position, // Posición actual de la ISSI
+                    //point: centerPoint, // Centro del área vigilada
+                    alertid: response.id,
+                    isInside: true,
+                    //options: JSON.parse(issiInfo.options)
+                };
+                // let alertsList = await redisClient.lRange("alerts", 0, -1);
+                // let alertsArray = alertsList.map(alert => JSON.parse(alert));
+                // const alertIdToRemove = response.id;
+                // alertsArray = alertsArray.map(alert => {
+                //     if (alert.alertid === alertIdToRemove)
+                //         return {
+                //             ...alert,
+                //             isInside: true,
+                //             message: `ISSI ${issi} ha regresado al área : ${JSON.parse(issiInfo.options).nombre}`
+                //         }
+                //     return alert;
+                // });
+                // await redisClient.del("alerts");
+                // for (const alert of alertsArray) {
+                //     await redisClient.rPush("alerts", JSON.stringify(alert));
+                // }
+                // io.emit('alerta', alertsArray);  // Emitir desde la caché
+                // // Publicar el cierre de la alerta en el canal de Redis
+                //console.log(`Worker ${process.pid} cerro una alerta con ISSI:`, alertObject.issi);
+                await redisClient.publish('alerts_channel', JSON.stringify(alertObject));
+                return;
+            } catch (error) {
+                console.error(`Error al cerrar la alerta para ISSI ${issi}:`, error);
             }
         }
     }
+
     const alertsList = await redisClient.lRange("alerts", 0, -1);
     let alertsArray = alertsList
         .map(alert => JSON.parse(alert)).filter(alert => alert.isInside === false); // Filtra las alertas que no están dentro
     if (alertsArray.length === 0)
         alertsArray = [];
-    io.emit('alerta', alertsArray);  // Emitir desde la caché
+    //io.emit('alerta', alertsArray);  // Emitir desde la caché
 };
 
 const setUnidades = async () => {

@@ -21,7 +21,7 @@ const socketHandler = (io) => {
             member: deviceId,
           });
   
-          console.log(`Ubicación guardada para ${deviceId}: (${latitude}, ${longitude})`);
+          //console.log(`Ubicación guardada para ${deviceId}: (${latitude}, ${longitude})`);
         } catch (error) {
           console.error('Error al procesar la ubicación:', error);
         }

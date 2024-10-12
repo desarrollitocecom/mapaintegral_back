@@ -74,49 +74,51 @@ const deleteIssiFromPoint = async (issi, alertid) => {
 
     if (!redisClient.isOpen)
         await redisClient.connect();
-    // Caso 1: Eliminar una ISSI específica si se proporciona
-    if (issi) {
-        try {
+
+    try {
+        // Caso 1: Eliminar una ISSI específica si se proporciona
+        if (issi) {
+            // Eliminar la ISSI de Redis
             const response = await redisClient.del(`vigilancia:${issi}`);
-            const reponse = await deleteAlert(issi);
-            //
-            let alertsList = await redisClient.lRange("alerts", 0, -1);
-            let alertsArray = alertsList.map(alert => JSON.parse(alert));
-            const alertIdToRemove = issi;
-            alertsArray = alertsArray.filter(alert => alert.issi !== alertIdToRemove);
-            await redisClient.del("alerts");
-            for (const alert of alertsArray) {
-                await redisClient.rPush("alerts", JSON.stringify(alert));
-            }
+            // Eliminar la alerta asociada en la base de datos (si corresponde)
+            await deleteAlert(issi);
+            // Publicar un mensaje en el canal para que el master elimine la alerta
+            const alertObject = {
+                action: 'delete',
+                issi: issi,
+                alertid: alertid // O el ID de la alerta si lo tienes
+            };
+            await redisClient.publish('alerts_channel', JSON.stringify(alertObject));
             return response > 0 ? response : null; // Retorna el número de eliminaciones o null si no se eliminó nada
-        } catch (error) {
-            console.error("Error al eliminar ISSI:", error);
-            return false;
-        }
-    }
-    // Caso 2: Eliminar todas las ISSIs si no se proporciona una ISSI específica
-    else {
-        try {
+
+        } else {
+            // Caso 2: Eliminar todas las ISSIs
             const keys = await redisClient.keys(`vigilancia:*`);
             if (keys.length > 0) {
                 const response = await redisClient.del(keys);
                 for (const key of keys) {
                     const issi = key.split(":")[1];
-                    //console.log(issi);
                     await deleteAlert(issi);
                     await redisClient.del(`vigilancia:${issi}`);
                 }
-                await redisClient.del("alerts");
-                return response // Retorna el número de eliminaciones o null si no se eliminó nada
 
-            } else
+                // Publicar un mensaje para que el master elimine todas las alertas
+                const alertObject = {
+                    action: 'deleteAll'
+                };
+                await redisClient.publish('alerts_channel', JSON.stringify(alertObject));
+
+                return response; // Retorna el número de eliminaciones o null si no se eliminó nada
+            } else {
                 return null; // Retorna null si no había claves que eliminar
-        } catch (error) {
-            console.error("Error al eliminar las ISSIs:", error);
-            return false;
+            }
         }
+    } catch (error) {
+        console.error("Error al eliminar ISSI(s):", error);
+        return false;
     }
 };
+
 
 
 

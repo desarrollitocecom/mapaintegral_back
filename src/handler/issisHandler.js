@@ -76,7 +76,6 @@ const getPointInfoHandler = async (req, res) => {
         errors.push("options no es objecto o es un array, revisa el tipo de dato");
     if (errors.length > 0)
         return res.status(400).json({ error: errors.join(", ") });
-    //console.log("options_api: ", options_api);
     try {
         if (!redisClient.isOpen)
             await redisClient.connect();
@@ -84,7 +83,7 @@ const getPointInfoHandler = async (req, res) => {
         const issisMatched = [];
         for (const key of keys) {
             const issi = key.split(":")[1];
-            const { latitud, longitud, punto_index, feature_index, options } = await redisClient.hGetAll(key);
+            const { latitud, longitud, options } = await redisClient.hGetAll(key);
             const options_formatted = JSON.parse(options);
             //console.log("options_formatted: ", options_formatted);
             //console.log("CONDICION: ", options_api.valor == options_formatted.valor);
@@ -99,7 +98,7 @@ const getPointInfoHandler = async (req, res) => {
         }
         //console.log("cantidad: ", issisMatched.length);
         if (issisMatched.length > 0)
-            return res.status(200).json(issisMatched);
+            return res.status(200).json(issisMatched.sort((a, b) => b - a));
         else
             return res.status(204).json({});
     } catch (error) {

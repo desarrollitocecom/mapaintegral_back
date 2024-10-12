@@ -73,6 +73,8 @@ const drawArea = async (point, options) => {
 }
 
 const checkIfPointisInArea = async (position, point, options = {}) => {
+    if(typeof options !== "string")
+        return;
     // Convertir coordenadas y redondearlas a 12 decimales
     const issiCoordinates = turf.point([
         roundTo(position.latitud, 12),

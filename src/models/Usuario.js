@@ -31,6 +31,15 @@ const Usuario = sequelize.define('Usuario', {
     dni: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        get() {
+            const rawValue = this.getDataValue('dni');
+            // Rellena el número entero con ceros a la izquierda para que tenga 8 dígitos
+            return rawValue ? rawValue.toString().padStart(8, '0') : null;
+        },
+        set(value) {
+            // Asegura que el valor se almacene como entero
+            this.setDataValue('dni', parseInt(value, 10));
+        }
     },
     superior: {
         type: DataTypes.STRING,

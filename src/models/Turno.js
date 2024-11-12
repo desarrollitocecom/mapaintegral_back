@@ -11,7 +11,7 @@ const Turno = sequelize.define('Turno', {
     nombre: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
+    },
 
 }, {
     // Opciones del modelo

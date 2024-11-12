@@ -62,7 +62,7 @@ io.on('connection', async (socket) => {
   // Emitir mensajes iniciales al cliente
   const alerts = fixArrayRedis(await getAlerts());
   socket.emit("alerta", alerts);
-  socket.emit("welcome", "Conexión exitosa");
+  socket.emit("welcome", "Conexión exitosa"); //164.163.184.17:3001 - SERENAZGO // 164.163.184.17:3000 - TRANSPORTE
 
   // Recibir ubicaciones desde los dispositivos
   socket.on('ubicacion', async (data) => {
@@ -72,6 +72,7 @@ io.on('connection', async (socket) => {
       const { member, latitude, longitude } = data;
       const x = roundTo(longitude);
       const y = roundTo(latitude);
+      console.log(data);
       const timestamp = new Date().toISOString(); // Obtener la hora en formato ISO
       // Guardar la ubicación en Redis
       await redisClient.geoAdd('ubicaciones',

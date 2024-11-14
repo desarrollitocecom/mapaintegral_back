@@ -72,7 +72,7 @@ io.on('connection', async (socket) => {
       const { member, latitude, longitude } = data;
       const x = roundTo(longitude);
       const y = roundTo(latitude);
-      console.log(data);
+      //console.log(data);
       const timestamp = new Date().toISOString(); // Obtener la hora en formato ISO
       // Guardar la ubicación en Redis
       await redisClient.geoAdd('ubicaciones',

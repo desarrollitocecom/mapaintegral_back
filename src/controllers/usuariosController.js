@@ -7,7 +7,7 @@ const createUser = async (member, nombres, apellidos, telefono, dni, superior, t
             const newUser = await Usuario.create({ member, nombres, apellidos, telefono, dni, superior, turno });
             return newUser || null
         } catch (error) {
-            console.error("Error creando usuario:", error.message);
+            console.error("Error creando usuario:", error);
             return false;
         }
     else
@@ -116,4 +116,14 @@ const deleteUser = async (id) => {
         return false;
 };
 
-module.exports = { createUser, getAllUsers, getUser, updateUser, deleteUser, aproveUser, getAllPendingAprovals }
+const validateUsuarioMovil = async (dni) => {
+    try {
+        console.log('dni en el controlador: ', dni)
+        const user = await Usuario.findOne({ where: { dni: dni } })
+        return user
+    } catch (error) {
+        return false
+    }
+}
+
+module.exports = { createUser, getAllUsers, getUser, updateUser, deleteUser, aproveUser, getAllPendingAprovals, validateUsuarioMovil }

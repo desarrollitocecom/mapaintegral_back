@@ -14,20 +14,20 @@ const getUbicaciones = async () => {
             telefonos.map(async (telf) => {
                 const posicion = await redisClient.geoPos("ubicaciones", telf);
                 const date = await redisClient.hGetAll(`ubicacion:${telf}`);
-                const response = await getUser(telf);
+                //const response = await getUser(telf);
                 // Si getUser no devuelve ningún registro, retornamos null
-                if (!response) return null;
+                //if (!response) return null;
                 // Si getUser devuelve un registro, retornamos los datos
                 return {
                     id: telf,
                     position: posicion,
                     date: date.timestamp,
-                    nombres: response.dataValues.nombres,
-                    apellidos: response.dataValues.apellidos,
-                    telefono: response.dataValues.telefono,
-                    dni: response.dataValues.dni,
-                    turno: response.dataValues.TurnoAsociado.nombre,
-                    superior: response.dataValues.superior,
+                    // nombres: response.dataValues.nombres,
+                    // apellidos: response.dataValues.apellidos,
+                    // telefono: response.dataValues.telefono,
+                    // dni: response.dataValues.dni,
+                    // turno: response.dataValues.TurnoAsociado.nombre,
+                    // superior: response.dataValues.superior,
                 };
             })
         );

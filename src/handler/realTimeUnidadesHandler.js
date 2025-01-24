@@ -6,12 +6,12 @@ const { getRadios } = require("../controllers/radiosController");
 const getRealTimeUnidadesHandler = async (req, res) => {
     const { type, state, orden, issi } = req.body;
     try {
-        if (cache.get("sesion")) {
+        if (cache.get("sesion_fisca")) {
             const unidadespayload = qs.stringify({
-                vidusuario: cache.get("sesion")._idusuario,
+                vidusuario: cache.get("sesion_fisca")._idusuario,
                 vidtipo: type,
                 videstado: state,
-                vtipousuario: cache.get("sesion")._tipo,
+                vtipousuario: cache.get("sesion_fisca")._tipo,
                 vorden: orden,
                 vissi: issi
             });

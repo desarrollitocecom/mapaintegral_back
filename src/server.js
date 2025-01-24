@@ -53,7 +53,12 @@ const getAlerts = async () => {
   }
 };
 
-io.adapter(redisAdapter({ host: 'localhost', port: 6379 })); // para conectar a los workers entre ellos se usa redis y este adaptador
+io.adapter(redisAdapter({
+  host: 'localhost',
+  port: 6379,
+  db: 0,
+  key: 'serenazgo'
+})); // para conectar a los workers entre ellos se usa redis y este adaptador
 
 // server.js
 io.on('connection', async (socket) => {
@@ -67,13 +72,27 @@ io.on('connection', async (socket) => {
   // Recibir ubicaciones desde los dispositivos
   socket.on('ubicacion', async (data) => {
     try {
-      // Estructura esperada del 'data': { id, lat, lng, timestamp }
-
+      
+      
       const { member, latitude, longitude } = data;
+
+      if(data.member == '4586c70adf95d92b'){
+        console.log("Datos extraidos:", data);
+        console.log(typeof(latitude))
+      }
+
+
       const x = roundTo(longitude);
       const y = roundTo(latitude);
-      console.log(data);
+      //console.log(data);
       const timestamp = new Date().toISOString(); // Obtener la hora en formato ISO
+
+      // Estructura esperada del 'data': { id, lat, lng, timestamp }
+      // if(data.member == '4586c70adf95d92b'){
+      //   console.log("Datos a guardar en Redis:", { member, longitude: x, latitude: y });
+      // }
+
+      
       // Guardar la ubicación en Redis
       await redisClient.geoAdd('ubicaciones',
         {
@@ -85,7 +104,7 @@ io.on('connection', async (socket) => {
       await redisClient.hSet(`ubicacion:${member}`, {
         timestamp: timestamp
       });
-      
+
       //console.log(`Ubicación guardada para ${member}: (${latitude}, ${longitude}) a las ${timestamp}`);
     } catch (error) {
       console.error('Error al procesar la ubicación:', error);
@@ -94,7 +113,7 @@ io.on('connection', async (socket) => {
 
   // Evento cuando el cliente se desconecta
   socket.on('disconnect', () => {
-   //console.log('Cliente desconectado');
+    //console.log('Cliente desconectado');
   });
 });
 

@@ -2,7 +2,7 @@ const redis = require('redis');
 
 // Crear el cliente de Redis usando la nueva API con promesas
 const redisClient = redis.createClient({
-    url: 'redis://localhost:6379' // Define el host y el puerto correctamente
+    url: 'redis://localhost:6379/0' // Define el host y el puerto correctamente
 });
 
 // Manejar la conexión y posibles errores
